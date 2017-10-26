@@ -9778,11 +9778,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Documents\\Eng Informática\\3Ano\\1Sem\\Programaçao_para_Internet\\ProjetoTrails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
       "projectName": "ProjetoTrails4Health",
-      "projectPath": "C:\\Users\\Acer\\Documents\\Eng Informática\\3Ano\\1Sem\\Programaçao_para_Internet\\ProjetoTrails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Documents\\Eng Informática\\3Ano\\1Sem\\Programaçao_para_Internet\\ProjetoTrails4Health\\ProjetoTrails4Health\\obj\\",
+      "outputPath": "C:\\Users\\Acer\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
