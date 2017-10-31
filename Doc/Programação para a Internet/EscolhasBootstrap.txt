@@ -1,1 +1,10 @@
+<<<<<<< HEAD
+Andreia Ernesto: https://bootswatch.com/lumen/#containers
+Pedro Sanches: https://bootswatch.com/readable/#containers
+=======
+
+Escolha Andreia- https://bootswatch.com/cosmo/#navbar
+
+
 https://bootswatch.com/lumen/#containers
+>>>>>>> 0979ab8b541a83fdbabaffe60ddff6afa033d94d
