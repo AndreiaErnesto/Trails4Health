@@ -1,5 +1,17 @@
+Andreia Ernesto
 
-Escolha Andreia- https://bootswatch.com/cosmo/#navbar
+https://bootswatch.com/cosmo/#navbar
 
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 
+<<<<<<< HEAD
  Escolha Janilta https://bootswatch.com/lumen/#containers
+=======
+Pedro Sanches
+
+https://bootswatch.com/readable/
+
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+>>>>>>> b5cd8eb91301eea0f133dadcfeaf7ded12e4244b
