@@ -1,0 +1,11 @@
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\bin\Debug\netcoreapp2.0\Trails4Health.deps.json
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\bin\Debug\netcoreapp2.0\Trails4Health.runtimeconfig.json
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\bin\Debug\netcoreapp2.0\Trails4Health.runtimeconfig.dev.json
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\bin\Debug\netcoreapp2.0\Trails4Health.dll
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\bin\Debug\netcoreapp2.0\Trails4Health.pdb
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\obj\Debug\netcoreapp2.0\Trails4Health.csprojResolveAssemblyReference.cache
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\obj\Debug\netcoreapp2.0\Trails4Health.csproj.CoreCompileInputs.cache
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\obj\Debug\netcoreapp2.0\Trails4Health.AssemblyInfoInputs.cache
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\obj\Debug\netcoreapp2.0\Trails4Health.AssemblyInfo.cs
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\obj\Debug\netcoreapp2.0\Trails4Health.dll
+C:\ProgramacaoInternet\Trails4Health\Trails4Health\obj\Debug\netcoreapp2.0\Trails4Health.pdb
