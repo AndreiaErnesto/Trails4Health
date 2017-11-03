@@ -10748,7 +10748,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pedro Fiuza Sanches\\.nuget\\packages\\": {}
+    "C:\\Users\\Acer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10756,14 +10756,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pedro Fiuza Sanches\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
       "projectName": "ProjetoTrails4Health",
-      "projectPath": "C:\\Users\\Pedro Fiuza Sanches\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
-      "packagesPath": "C:\\Users\\Pedro Fiuza Sanches\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pedro Fiuza Sanches\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\obj\\",
+      "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Acer\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Pedro Fiuza Sanches\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
