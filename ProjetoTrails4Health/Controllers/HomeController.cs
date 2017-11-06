@@ -15,7 +15,7 @@ namespace ProjetoTrails4Health.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Esta aplicação tem por âmbito mostrar os trilhos da Serra da Estrela.";
 
             return View();
         }

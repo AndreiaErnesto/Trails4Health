@@ -31,20 +31,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Inicio">Início</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Início</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Trilhos">Trilhos</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="SobreNos">Sobre nós</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre nós</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contactos">Contactos</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Login">Login | Registar</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Pesquisar</button>
-                    </form>
+
+                        <li><a asp-area="" asp-controller="Home" asp-action="Login">Login | Registar</a></li>
+                    
                 </ul>
 </div>
         </div>
@@ -52,8 +48,9 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2017 - Trails4Health</p>
+        <footer  style="text-align: center">
+            <p>&copy; Copyright Andreia | Janilta | Pedro  </p>
+            <p> 2017 - Trails4Health </p>
         </footer>
     </div>
 
