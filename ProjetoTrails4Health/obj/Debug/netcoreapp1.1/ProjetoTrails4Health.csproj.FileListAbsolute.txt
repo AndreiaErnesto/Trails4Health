@@ -20,3 +20,14 @@ C:\Users\Pedro Fiuza Sanches\Documents\GitHub\Trails4Health\ProjetoTrails4Health
 C:\Users\Pedro Fiuza Sanches\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.AssemblyInfo.cs
 C:\Users\Pedro Fiuza Sanches\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.dll
 C:\Users\Pedro Fiuza Sanches\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.pdb
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\bin\Debug\netcoreapp1.1\ProjetoTrails4Health.deps.json
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\bin\Debug\netcoreapp1.1\ProjetoTrails4Health.runtimeconfig.json
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\bin\Debug\netcoreapp1.1\ProjetoTrails4Health.runtimeconfig.dev.json
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\bin\Debug\netcoreapp1.1\ProjetoTrails4Health.dll
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\bin\Debug\netcoreapp1.1\ProjetoTrails4Health.pdb
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.csprojResolveAssemblyReference.cache
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.csproj.CoreCompileInputs.cache
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.AssemblyInfoInputs.cache
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.AssemblyInfo.cs
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.dll
+C:\Users\Silvana\Documents\GitHub\Trails4Health\ProjetoTrails4Health\obj\Debug\netcoreapp1.1\ProjetoTrails4Health.pdb
