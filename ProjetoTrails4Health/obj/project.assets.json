@@ -10748,7 +10748,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Silvana\\.nuget\\packages\\": {}
+    "C:\\Users\\1012063\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10756,14 +10756,14 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Silvana\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "projectUniqueName": "C:\\Users\\1012063\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
       "projectName": "ProjetoTrails4Health",
-      "projectPath": "C:\\Users\\Silvana\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
-      "packagesPath": "C:\\Users\\Silvana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Silvana\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\obj\\",
+      "projectPath": "C:\\Users\\1012063\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "packagesPath": "C:\\Users\\1012063\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\1012063\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Silvana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\1012063\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10771,18 +10771,12 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {}
         }
-      },
-      "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
       }
     },
     "frameworks": {
