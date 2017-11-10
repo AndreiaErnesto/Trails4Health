@@ -31,5 +31,9 @@ namespace ProjetoTrails4Health.Controllers
         {
             return View();
         }
+        public IActionResult AgendarPercurso()
+        {
+            return View();
+        }
     }
 }
