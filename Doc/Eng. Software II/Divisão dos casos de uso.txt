@@ -1,0 +1,30 @@
+ANDREIA ERNESTO
+-Configurar Trilho
+-Questionar aptidão física
+-Criar proposta trilho
+-Eliminar trilho agendado
+
+----------------------------------------------------
+----------------------------------------------------
+
+PEDRO SANCHES
+-Login
+-Consultar histórico de trilhos percorridos
+-Consultar aptidão fisica
+-Consultar utilizadores que fizeram trilho
+
+----------------------------------------------------
+----------------------------------------------------
+
+JANILTA PIRES
+-Agendar trilho
+-Realizar trilho
+-Consultar trilhos agendados
+-Alterar trilho (agendado)
+
+----------------------------------------------------
+----------------------------------------------------
+
+
+NOTA: Fazer descrição de casos de uso com o template e 
+      o diagrama de sequência para os casos de uso assinalados.
