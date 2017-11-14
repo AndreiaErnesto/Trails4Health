@@ -20,7 +20,7 @@ namespace ProjetoTrails4Health.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Contactos()
         {
             ViewData["Message"] = "Your contact page.";
 
