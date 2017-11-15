@@ -1,17 +1,19 @@
 ANDREIA ERNESTO
--Configurar Trilho
--Questionar aptidão física
--Criar proposta trilho
--Eliminar trilho agendado
+-Inserir utilizador
+-Consultar utilizador
+-Editar utilizador
+-Eliminar utilizador
+-Responder a questionário
 
 ----------------------------------------------------
 ----------------------------------------------------
 
 PEDRO SANCHES
--Login
+-Autenticar utilizador
 -Consultar histórico de trilhos percorridos
 -Consultar aptidão fisica
 -Consultar utilizadores que fizeram trilho
+-Configurar Trilho
 
 ----------------------------------------------------
 ----------------------------------------------------
@@ -21,6 +23,7 @@ JANILTA PIRES
 -Realizar trilho
 -Consultar trilhos agendados
 -Alterar trilho (agendado)
+-Cancelar Trilho Agendado
 
 ----------------------------------------------------
 ----------------------------------------------------
