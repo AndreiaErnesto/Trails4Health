@@ -1,8 +1,67 @@
 ﻿@{
-    ViewData["Title"] = "Contactos";
+    ViewData["Title"] = "Contacte-nos...";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+<h2><b>@ViewData["Title"]</b></h2>
+
+<div class="container">
+    <div class="row">
+
+        <form class="form-horizontal" id="frmcontatoazul">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend></legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="txtinputnome">Nome</label>
+                    <div class="col-md-8">
+                        <input id="txtinputnome" name="txtinputnome" placeholder="Insira o seu nome" class="form-control input-md" required="required" type="text" />
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="txtinputemail">E-mail</label>
+                    <div class="col-md-8">
+                        <input id="txtinputemail" name="txtinputemail" placeholder="Insira um e-mail válido" class="form-control input-md" required="required" type="email" />
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="txtinputassunto">Assunto</label>
+                    <div class="col-md-8">
+                        <input id="txtinputassunto" name="txtinputassunto" placeholder="Informe do que se trata" class="form-control input-md" required="required" type="text" />
+                    </div>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="txtinputarea">Mensagem</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" id="txtinputarea" rows="6" name="txtinputarea" placeholder="Escreva sua opinião, crítica ou sugestão para o site"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"> <input type="checkbox" name="remember"> Lembrar dados </label>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="btnenviar"></label>
+                        <div class="col-md-8">
+                            <button id="btnenviar" name="btnenviar" class="btn btn-primary btn-lg">Enviar</button>
+                        </div>
+                    </div>
+
+</fieldset>
+        </form>
+    </div>
+</div>
+
+
 
 <address>
     One Microsoft Way<br />
