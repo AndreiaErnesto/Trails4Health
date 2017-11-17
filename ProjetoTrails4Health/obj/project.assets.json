@@ -10750,14 +10750,10 @@
   "packageFolders": {
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
     "C:\\Users\\Pedro Fiuza Sanches\\.nuget\\packages\\": {}
 =======
     "C:\\Users\\1011713\\.nuget\\packages\\": {}
 >>>>>>> 7f5c323ae8245372c5ce0034cd1eede48211929c
-=======
-    "C:\\Users\\1012180\\.nuget\\packages\\": {}
->>>>>>> parent of 7f5c323... Criação do modelo do utilizador
 =======
     "C:\\Users\\1012180\\.nuget\\packages\\": {}
 >>>>>>> parent of 7f5c323... Criação do modelo do utilizador
@@ -10768,7 +10764,6 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Pedro Fiuza Sanches\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
@@ -10784,9 +10779,6 @@
 =======
       "projectUniqueName": "C:\\Users\\1012180\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
 >>>>>>> parent of 7f5c323... Criação do modelo do utilizador
-=======
-      "projectUniqueName": "C:\\Users\\1012180\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
->>>>>>> parent of 7f5c323... Criação do modelo do utilizador
       "projectName": "ProjetoTrails4Health",
       "projectPath": "C:\\Users\\1012180\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
       "packagesPath": "C:\\Users\\1012180\\.nuget\\packages\\",
@@ -10794,12 +10786,8 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
 <<<<<<< HEAD
-<<<<<<< HEAD
         "C:\\Users\\1011713\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 7f5c323ae8245372c5ce0034cd1eede48211929c
-=======
-        "C:\\Users\\1012180\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> parent of 7f5c323... Criação do modelo do utilizador
 =======
         "C:\\Users\\1012180\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> parent of 7f5c323... Criação do modelo do utilizador
