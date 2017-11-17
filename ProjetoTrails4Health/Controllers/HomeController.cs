@@ -13,6 +13,20 @@ namespace ProjetoTrails4Health.Controllers
             return View();
         }
 
+        public IActionResult Trilhos()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
+        public IActionResult Galeria()
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            return View();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Esta aplicação tem por âmbito mostrar os trilhos da Serra da Estrela.";

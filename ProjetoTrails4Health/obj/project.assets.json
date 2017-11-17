@@ -10748,7 +10748,11 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\1012180\\.nuget\\packages\\": {}
+<<<<<<< HEAD
+    "C:\\Users\\Pedro Fiuza Sanches\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\1011713\\.nuget\\packages\\": {}
+>>>>>>> 7f5c323ae8245372c5ce0034cd1eede48211929c
   },
   "project": {
     "version": "1.0.0",
@@ -10756,14 +10760,25 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\1012180\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Pedro Fiuza Sanches\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
       "projectName": "ProjetoTrails4Health",
-      "projectPath": "C:\\Users\\1012180\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
-      "packagesPath": "C:\\Users\\1012180\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\1012180\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\obj\\",
+      "projectPath": "C:\\Users\\Pedro Fiuza Sanches\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "packagesPath": "C:\\Users\\Pedro Fiuza Sanches\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pedro Fiuza Sanches\\Documents\\GitHub\\Trails4Health\\ProjetoTrails4Health\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\1012180\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pedro Fiuza Sanches\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\1011713\\Documents\\GitHub\\Trails4Health\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "projectName": "ProjetoTrails4Health",
+      "projectPath": "C:\\Users\\1011713\\Documents\\GitHub\\Trails4Health\\Trails4Health\\ProjetoTrails4Health\\ProjetoTrails4Health.csproj",
+      "packagesPath": "C:\\Users\\1011713\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\1011713\\Documents\\GitHub\\Trails4Health\\Trails4Health\\ProjetoTrails4Health\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\1011713\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 7f5c323ae8245372c5ce0034cd1eede48211929c
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10771,12 +10786,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {
