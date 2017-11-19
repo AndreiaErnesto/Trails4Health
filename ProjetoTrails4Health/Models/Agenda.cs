@@ -7,5 +7,11 @@ namespace ProjetoTrails4Health.Models
 {
     public class Agenda
     {
+        public int IdTrilho { get; set; }
+        public int IdTurista { get; set; }
+        public int DataInicio { get; set; }
+        public int DataFim { get; set; }
+        public int tempoGasto { get; set; }
+        public string EstadoAgenda { get; set; }
     }
 }
