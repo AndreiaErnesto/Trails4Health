@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoTrails4Health.Models
 {
-    public class Agenda
+    public class Agendar
     {
         public int IdTrilho { get; set; }
         public int IdTurista { get; set; }
