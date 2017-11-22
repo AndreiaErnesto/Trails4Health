@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ProjetoTrails4Health.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjetoTrails4Health
 {
@@ -29,6 +31,9 @@ namespace ProjetoTrails4Health
         {
             // Add framework services.
             services.AddMvc();
+            services.AddDbContext<AgendarTrilhoDbContext>(options =>
+       options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringSportsStore"))
+       );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
