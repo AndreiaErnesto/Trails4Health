@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using ProjetoTrails4Health.Models;
 
 namespace ProjetoTrails4Health
 {
@@ -30,7 +31,8 @@ namespace ProjetoTrails4Health
         {
             // Add framework services.
             services.AddMvc();
-            
+            services.AddTransient<IUtilizadorRepository, EFUtilizadorRepository>();
+
             //Ficheiro .json Database=Utilizadores - criação de base de dados com este nome
             //Ficheiro .json MultipleActiveResultSets - vários utilizadores a aceder com diferentes querys
             services.AddDbContext<Data.UtilizadorDbContext>(options =>
