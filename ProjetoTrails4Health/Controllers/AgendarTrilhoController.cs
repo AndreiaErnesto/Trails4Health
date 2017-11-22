@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ProjetoTrails4Health.Controllers
 {
-    public class AgendarPercursoController : Controller
+    public class AgendarTrilhoController : Controller
     {
         public IActionResult Index()
         {

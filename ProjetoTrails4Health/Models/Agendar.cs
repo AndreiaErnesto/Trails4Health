@@ -9,9 +9,10 @@ namespace ProjetoTrails4Health.Models
     {
         public int IdTrilho { get; set; }
         public int IdTurista { get; set; }
-        public int DataInicio { get; set; }
-        public int DataFim { get; set; }
+        public int dataReserva { get; set; }
+        public int DataPrevistaInicioTrilho { get; set; }
+        public int dataEstadoAgendamento { get; set; }
         public int tempoGasto { get; set; }
-        public string EstadoAgenda { get; set; }
+        public string EstadoAgendamento { get; set; }
     }
 }

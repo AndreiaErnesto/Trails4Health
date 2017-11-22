@@ -26,7 +26,7 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Models\ViewModels\" />
-    <Folder Include="Views\AgendarPercurso\" />
+    <Folder Include="Views\AgendarTrillho\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
