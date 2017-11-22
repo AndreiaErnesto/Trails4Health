@@ -15,7 +15,7 @@ namespace ProjetoTrails4Health.Data
         }
 
         //DbSet para todas as classes
-        public DbSet<Models.Utilizador> Utilizadores;
-        
+        public DbSet<Models.Utilizador> Utilizadores { get; set; }
+
     }
 }
