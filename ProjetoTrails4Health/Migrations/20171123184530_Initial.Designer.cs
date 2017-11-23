@@ -8,7 +8,7 @@ using ProjetoTrails4Health.Data;
 namespace ProjetoTrails4Health.Migrations
 {
     [DbContext(typeof(AplicacaoDbContext))]
-    [Migration("20171123174618_Initial")]
+    [Migration("20171123184530_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,7 +123,7 @@ namespace ProjetoTrails4Health.Migrations
 
                     b.Property<string>("Distancia_Total");
 
-                    b.Property<string>("Duracao_media");
+                    b.Property<string>("Duracao_Media");
 
                     b.Property<string>("Esta_Ativo");
 
@@ -183,8 +183,6 @@ namespace ProjetoTrails4Health.Migrations
                     b.Property<string>("Password");
 
                     b.Property<string>("Telemovel");
-
-                    b.Property<int>("TrilhoId");
 
                     b.HasKey("TuristaId");
 

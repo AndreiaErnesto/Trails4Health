@@ -122,7 +122,7 @@ namespace ProjetoTrails4Health.Migrations
 
                     b.Property<string>("Distancia_Total");
 
-                    b.Property<string>("Duracao_media");
+                    b.Property<string>("Duracao_Media");
 
                     b.Property<string>("Esta_Ativo");
 
@@ -182,8 +182,6 @@ namespace ProjetoTrails4Health.Migrations
                     b.Property<string>("Password");
 
                     b.Property<string>("Telemovel");
-
-                    b.Property<int>("TrilhoId");
 
                     b.HasKey("TuristaId");
 

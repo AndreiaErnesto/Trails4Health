@@ -86,6 +86,9 @@ namespace ProjetoTrails4Health.Data
 
 
         public DbSet<ProjetoTrails4Health.Models.Trilho> Trilho { get; set; }
+
+
+        public DbSet<ProjetoTrails4Health.Models.Agenda_Turista_Trilho> Agenda_Turista_Trilho { get; set; }
     }
 }
 

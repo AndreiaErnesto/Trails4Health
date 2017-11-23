@@ -1,0 +1,55 @@
+@model ProjetoTrails4Health.Models.Agenda_Turista_Trilho
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2>Editar</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Agenda</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="TrilhoId" />
+    <input type="hidden" asp-for="TuristaId" />
+        <div class="form-group">
+            <label asp-for="Data_Reserva" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Data_Reserva" class="form-control" />
+                <span asp-validation-for="Data_Reserva" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Data_Prevista_Inicio_Trilho" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Data_Prevista_Inicio_Trilho" class="form-control" />
+                <span asp-validation-for="Data_Prevista_Inicio_Trilho" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Estado_Agendamento" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Estado_Agendamento" class="form-control" />
+                <span asp-validation-for="Estado_Agendamento" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Data_Estado_Agendamento" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Data_Estado_Agendamento" class="form-control" />
+                <span asp-validation-for="Data_Estado_Agendamento" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Voltar para lista</a>
+</div>
+

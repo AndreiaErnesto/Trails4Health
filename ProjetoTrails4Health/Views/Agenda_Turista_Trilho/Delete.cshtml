@@ -1,0 +1,60 @@
+@model ProjetoTrails4Health.Models.Agenda_Turista_Trilho
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Tem certeza que quer eliminar?<</h3>
+<div>
+    <h4>Agenda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="TrilhoId" />
+        <input type="hidden" asp-for="TuristaId" />
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Reserva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_Reserva)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Prevista_Inicio_Trilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_Prevista_Inicio_Trilho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_Agendamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado_Agendamento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Estado_Agendamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_Estado_Agendamento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trilho.TrilhoId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Turista)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Turista.TuristaId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Voltar para lista</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,54 @@
+@model ProjetoTrails4Health.Models.Agenda_Turista_Trilho
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Agenda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Reserva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_Reserva)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Prevista_Inicio_Trilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_Prevista_Inicio_Trilho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_Agendamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado_Agendamento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Estado_Agendamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Data_Estado_Agendamento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trilho.TrilhoId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Turista)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Turista.TuristaId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Voltar para lista</a>
+</div>

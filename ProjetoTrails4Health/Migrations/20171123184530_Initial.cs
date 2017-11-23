@@ -73,8 +73,7 @@ namespace ProjetoTrails4Health.Migrations
                     NIF = table.Column<string>(nullable: true),
                     Nome = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
-                    Telemovel = table.Column<string>(nullable: true),
-                    TrilhoId = table.Column<int>(nullable: false)
+                    Telemovel = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -89,7 +88,7 @@ namespace ProjetoTrails4Health.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DificuldadeId = table.Column<int>(nullable: false),
                     Distancia_Total = table.Column<string>(nullable: true),
-                    Duracao_media = table.Column<string>(nullable: true),
+                    Duracao_Media = table.Column<string>(nullable: true),
                     Esta_Ativo = table.Column<string>(nullable: true),
                     Local_Fim_Trilho = table.Column<string>(nullable: true),
                     Local_Inicio_Trilho = table.Column<string>(nullable: true),
