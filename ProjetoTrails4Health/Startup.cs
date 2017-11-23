@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using ProjetoTrails4Health.Data;
 
 namespace ProjetoTrails4Health
 {
@@ -29,6 +31,12 @@ namespace ProjetoTrails4Health
         {
             // Add framework services.
             services.AddMvc();
+
+            //Ficheiro .json Database=Books - criação de base de dados com este nome
+            //Ficheiro .json MultipleActiveResultSets - vários utilizadores a aceder com diferentes querys
+            services.AddDbContext<AplicacaoDbContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("ConectionStringsAplicacao"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
