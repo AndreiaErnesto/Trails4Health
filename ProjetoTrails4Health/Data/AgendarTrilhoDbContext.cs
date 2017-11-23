@@ -13,7 +13,21 @@ namespace ProjetoTrails4Health.Data
            DbContextOptions<AgendarTrilhoDbContext> options) : base(options)
         {
         }
-        public DbSet<Agendar> AgendaTrilho { get; set; }
+        public DbSet<AgendarTrilho> AgendarTrilho { get; set; }
+        public DbSet<Turista> Turista { get; set; }
+        public object IdTrilho { get; private set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+           modelBuilder.Entity<AgendarTrilho>()
+        .HasKey(t=> new { t.IdTurista, t.IdTrilho } );
+
+            modelBuilder.Entity<AgendarTrilho>()
+                .HasOne(t => t.AgendarTrilhos)
+                .WithMany(rt => rt.IdTurista)
+                .HasForeignKey(t => t.IdTurista);
+        }
     }
+   
 }
 
