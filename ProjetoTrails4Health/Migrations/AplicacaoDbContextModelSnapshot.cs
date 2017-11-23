@@ -75,6 +75,32 @@ namespace ProjetoTrails4Health.Migrations
                     b.ToTable("Trilho_Etapa");
                 });
 
+            modelBuilder.Entity("ProjetoTrails4Health.Models.Utilizador", b =>
+                {
+                    b.Property<int>("UtilizadorId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CodPostal");
+
+                    b.Property<string>("DataNascimento");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Morada");
+
+                    b.Property<string>("NIF");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Telemovel");
+
+                    b.HasKey("UtilizadorId");
+
+                    b.ToTable("Utilizadores");
+                });
+
             modelBuilder.Entity("ProjetoTrails4Health.Models.Trilho_Etapa", b =>
                 {
                     b.HasOne("ProjetoTrails4Health.Models.Etapa", "Etapa")

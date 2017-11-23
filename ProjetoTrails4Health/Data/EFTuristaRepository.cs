@@ -9,14 +9,16 @@ namespace ProjetoTrails4Health.Models
 {
     
 
-    public class EFUtilizadorRepository : IUtilizadorRepository
+    public class EFTuristaRepository : ITuristaRepository
     {
-        private UtilizadorDbContext dbContext; //contexto da Base de dados
+        private AplicacaoDbContext dbContext; //contexto da Base de dados
+
         //Construtor do contexto da base de dados
-        public EFUtilizadorRepository(UtilizadorDbContext dbContext) //recebe como parametro a base de dados
+        public EFTuristaRepository(AplicacaoDbContext dbContext) //recebe como parametro a base de dados
         {
             this.dbContext = dbContext;
         }
-        public IEnumerable<Utilizador> Utilizador => dbContext.Utilizador;
+
+        public IEnumerable<Turista> Turista => dbContext.Turistas;
     }
 }

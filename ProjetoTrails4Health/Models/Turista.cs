@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace ProjetoTrails4Health.Models
 {
-    public class Utilizador{
-        public int ID_Utilizador { get; set; }
+    public class Turista{
+        public int TuristaId { get; set; }
         public string Nome { get; set; }
         public string Password { get; set; }
         public string Morada { get; set; }
@@ -15,5 +15,9 @@ namespace ProjetoTrails4Health.Models
         public string Telemovel { get; set; }
         public string DataNascimento { get; set; }
         public string NIF { get; set; }
+        public int TrilhoId { get; set; }
+
+        public ICollection<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos { get; set; }  //Relacionamentos
+        public ICollection<Resposta_Questionario> Respostas_Questionario { get; set; }
     }
 }

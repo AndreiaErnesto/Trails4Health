@@ -8,7 +8,7 @@ using ProjetoTrails4Health.Data;
 namespace ProjetoTrails4Health.Migrations
 {
     [DbContext(typeof(AplicacaoDbContext))]
-    [Migration("20171123111856_Initial")]
+    [Migration("20171123120913_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,32 @@ namespace ProjetoTrails4Health.Migrations
                     b.HasIndex("EtapaId");
 
                     b.ToTable("Trilho_Etapa");
+                });
+
+            modelBuilder.Entity("ProjetoTrails4Health.Models.Utilizador", b =>
+                {
+                    b.Property<int>("UtilizadorId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CodPostal");
+
+                    b.Property<string>("DataNascimento");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Morada");
+
+                    b.Property<string>("NIF");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Telemovel");
+
+                    b.HasKey("UtilizadorId");
+
+                    b.ToTable("Utilizadores");
                 });
 
             modelBuilder.Entity("ProjetoTrails4Health.Models.Trilho_Etapa", b =>

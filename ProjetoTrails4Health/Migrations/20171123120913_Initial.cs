@@ -45,6 +45,26 @@ namespace ProjetoTrails4Health.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Utilizadores",
+                columns: table => new
+                {
+                    UtilizadorId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CodPostal = table.Column<string>(nullable: true),
+                    DataNascimento = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Morada = table.Column<string>(nullable: true),
+                    NIF = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    Telemovel = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Utilizadores", x => x.UtilizadorId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Trilho_Etapa",
                 columns: table => new
                 {
@@ -80,6 +100,9 @@ namespace ProjetoTrails4Health.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Trilho_Etapa");
+
+            migrationBuilder.DropTable(
+                name: "Utilizadores");
 
             migrationBuilder.DropTable(
                 name: "Etapa");

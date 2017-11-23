@@ -8,11 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-<<<<<<< HEAD
-using ProjetoTrails4Health.Models;
-=======
 using ProjetoTrails4Health.Data;
->>>>>>> master
 
 namespace ProjetoTrails4Health
 {
@@ -35,20 +31,12 @@ namespace ProjetoTrails4Health
         {
             // Add framework services.
             services.AddMvc();
-<<<<<<< HEAD
-            services.AddTransient<IUtilizadorRepository, EFUtilizadorRepository>();
 
-            //Ficheiro .json Database=Utilizadores - criação de base de dados com este nome
-            //Ficheiro .json MultipleActiveResultSets - vários utilizadores a aceder com diferentes querys
-            services.AddDbContext<Data.UtilizadorDbContext>(options =>
-                 options.UseSqlServer(Configuration.GetConnectionString("ConectionStringsUtilizadores"))
-=======
 
             //Ficheiro .json Database=Books - criação de base de dados com este nome
             //Ficheiro .json MultipleActiveResultSets - vários utilizadores a aceder com diferentes querys
             services.AddDbContext<AplicacaoDbContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("ConectionStringsAplicacao"))
->>>>>>> master
             );
         }
 
