@@ -47,17 +47,17 @@ namespace ProjetoTrails4Health.Data
 
             //AGENDA _ TRILHO _ TURISTA
             modelBuilder.Entity<Agenda_Turista_Trilho>()
-                .HasKey(tt => new { tt.TrilhoId, tt.TuristaId }); //chaves estrangeiras
+                .HasKey(at => new { at.TrilhoId, at.TuristaId }); //chaves estrangeiras
 
             modelBuilder.Entity<Agenda_Turista_Trilho>()
-                .HasOne(tt => tt.Trilho)
+                .HasOne(at => at.Trilho)
                 .WithMany(t => t.Agenda_Turistas_Trilhos)
-                .HasForeignKey(tt => tt.TrilhoId);
+                .HasForeignKey(at => at.TrilhoId);
 
             modelBuilder.Entity<Agenda_Turista_Trilho>()
-                .HasOne(tt => tt.Turista)
+                .HasOne(at => at.Turista)
                 .WithMany(tu => tu.Agenda_Turistas_Trilhos)
-                .HasForeignKey(tt => tt.TuristaId);
+                .HasForeignKey(at => at.TuristaId);
 
             //Resposta_Questionario
             modelBuilder.Entity<Resposta_Questionario>()
