@@ -8,7 +8,7 @@ using ProjetoTrails4Health.Data;
 namespace ProjetoTrails4Health.Migrations
 {
     [DbContext(typeof(AplicacaoDbContext))]
-    [Migration("20171123163142_Initial")]
+    [Migration("20171123174618_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

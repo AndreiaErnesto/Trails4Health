@@ -1,0 +1,72 @@
+@model ProjetoTrails4Health.Models.Trilho
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Trilho</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome_Trilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome_Trilho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Local_Inicio_Trilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Local_Inicio_Trilho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Local_Fim_Trilho)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Local_Fim_Trilho)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Distancia_Total)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Distancia_Total)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracao_Media)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duracao_Media)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Esta_Ativo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Esta_Ativo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tempo_Gasto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tempo_Gasto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dificuldade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dificuldade.DificuldadeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Professor.ProfessorId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Editar" asp-route-id="@Model.TrilhoId">Edit</a> |
+    <a asp-action="Index">Voltar para lista</a>
+</div>

@@ -83,6 +83,9 @@ namespace ProjetoTrails4Health.Data
 
 
         public DbSet<ProjetoTrails4Health.Models.Professor> Professor { get; set; }
+
+
+        public DbSet<ProjetoTrails4Health.Models.Trilho> Trilho { get; set; }
     }
 }
 
