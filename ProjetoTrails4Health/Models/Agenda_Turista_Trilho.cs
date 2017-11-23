@@ -15,7 +15,7 @@ namespace ProjetoTrails4Health.Models
 
         public DateTime Data_Reserva { get; set; }
         public DateTime Data_Prevista_Inicio_Trilho { get; set; }
-        public int Estado_Agendamento { get; set; }
+        public string  Estado_Agendamento { get; set; }
         public DateTime Data_Estado_Agendamento { get; set; }
     }
 }

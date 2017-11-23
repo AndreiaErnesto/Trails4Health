@@ -18,6 +18,12 @@ namespace ProjetoTrails4Health.Data
         private static Turista turista5;
         private static Turista turista6;
 
+        private static Trilho trilho1;
+        private static Trilho trilho2;
+        private static Trilho trilho3;
+        private static Trilho trilho4;
+        private static Trilho trilho5;
+        private static Trilho trilho6;
         public static void EnsurePopulated(IServiceProvider serviceProvider) //Interface de provedor de serviços
         {
             AplicacaoDbContext dbContext = (AplicacaoDbContext)serviceProvider.GetService(typeof(AplicacaoDbContext));
@@ -67,6 +73,18 @@ namespace ProjetoTrails4Health.Data
                 new Trilho { Nome_Trilho = "Covão de Santa Maria", Local_Inicio_Trilho = "Pousada de São Lourenço", Local_Fim_Trilho = "Covão de Santa Maria", Distancia_Total = "4 km", Duracao_Media = "4h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId },
                 new Trilho { Nome_Trilho = "Corredor de Mouros", Local_Inicio_Trilho = "Covão da Ponte", Local_Fim_Trilho = "Corredor de Mouros", Distancia_Total = "8 km", Duracao_Media = "6h15min", Esta_Ativo = "Sim", Tempo_Gasto = "" , ProfessorId = professor2.ProfessorId },
                 new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId }
+           );
+        }
+        private static void PopulatedAgenda_Turistas_Trilhos(AplicacaoDbContext dbContext)
+        {
+            dbContext.Agenda_Turistas_Trilhos.AddRange(
+                new Agenda_Turista_Trilho {TuristaId =turista1.TuristaId,TrilhoId = trilho1.TrilhoId,   Estado_Agendamento = "Configurado" },
+                new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho2.TrilhoId,   Estado_Agendamento = "Cancelado"  },
+                new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId,   Estado_Agendamento = "Alterado"  },
+                new Agenda_Turista_Trilho { TuristaId = turista4.TuristaId, TrilhoId = trilho4.TrilhoId,  Estado_Agendamento = "Consultado"  },
+                new Agenda_Turista_Trilho { TuristaId = turista5.TuristaId, TrilhoId = trilho5.TrilhoId, Estado_Agendamento = "Agendado"  },
+                new Agenda_Turista_Trilho { TuristaId = turista6.TuristaId, TrilhoId = trilho6.TrilhoId,  Estado_Agendamento = "Cancelado"  }
+
            );
         }
     }
