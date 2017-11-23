@@ -31,7 +31,7 @@ namespace ProjetoTrails4Health
         {
             // Add framework services.
             services.AddMvc();
-            services.AddDbContext<AgendarTrilhoDbContext>(options =>
+            services.AddDbContext<AgendarTuristaTrilhoDbContext>(options =>
        options.UseSqlServer(Configuration.GetConnectionString("ConnectionStringSportsStore"))
        );
         }

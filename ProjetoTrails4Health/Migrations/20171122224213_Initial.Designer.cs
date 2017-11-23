@@ -7,7 +7,7 @@ using ProjetoTrails4Health.Data;
 
 namespace ProjetoTrails4Health.Migrations
 {
-    [DbContext(typeof(AgendarTrilhoDbContext))]
+    [DbContext(typeof(AgendarTuristaTrilhoDbContext))]
     [Migration("20171122224213_Initial")]
     partial class Initial
     {

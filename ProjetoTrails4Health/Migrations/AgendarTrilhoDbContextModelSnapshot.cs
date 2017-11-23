@@ -7,7 +7,7 @@ using ProjetoTrails4Health.Data;
 
 namespace ProjetoTrails4Health.Migrations
 {
-    [DbContext(typeof(AgendarTrilhoDbContext))]
+    [DbContext(typeof(AgendarTuristaTrilhoDbContext))]
     partial class AgendarTrilhoDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -9,6 +9,6 @@ namespace ProjetoTrails4Health.Models.ViewModel
     {
         public int Idtrilho { get; set; }
         public string NomTrilho { get; set; }
-        public ICollection<AgendarTrilho> AgendarTrilhos { get; set; }
+        public ICollection<AgendarTuristaTrilho> AgendarTuristaTrilhos { get; set; }
     }
 }
