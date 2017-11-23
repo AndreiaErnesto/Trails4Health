@@ -9,7 +9,7 @@ namespace ProjetoTrails4Health.Models
     {
         public int RespostaId { get; set; }
         public string Resposta { get; set; }
-        public Turista Turista { get; set; } //O que permite ir buscar o author
+        public Turista Turista { get; set; } //O que permite ir buscar o turista
         public int TuristaId { get; set; } //Chave estrangeira
     }
 }

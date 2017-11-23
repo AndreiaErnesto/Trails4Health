@@ -19,6 +19,7 @@ namespace ProjetoTrails4Health.Data
         public DbSet<Etapa> Etapas;
         public DbSet<Trilho_Etapa> Trilhos_Etapas;
         public DbSet<Turista> Turistas;
+        public DbSet<Professor> Professor;
         public DbSet<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos;
         public DbSet<Resposta_Questionario> Respostas_Questionario;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -53,10 +54,17 @@ namespace ProjetoTrails4Health.Data
                 .WithMany(tu => tu.Agenda_Turistas_Trilhos)
                 .HasForeignKey(tt => tt.TuristaId);
 
+            //Resposta_Questionario
             modelBuilder.Entity<Resposta_Questionario>()
                 .HasOne(r => r.Turista)
-                .WithMany(t => t.Respostas_Questionario)
+                .WithMany(tu => tu.Respostas_Questionario)
                 .HasForeignKey(r => r.TuristaId);
+
+            //Trilho
+            modelBuilder.Entity<Trilho>()
+                .HasOne(t => t.Professor)
+                .WithMany(p => p.Trilhos)
+                .HasForeignKey(t => t.ProfessorId);
 
         }
     }

@@ -20,5 +20,8 @@ namespace ProjetoTrails4Health.Models
         public ICollection<Trilho_Etapa> Trilhos_Etapas { get; set; } //Relacionamentos
         public ICollection<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos { get; set; } //Relacionamentos
 
+        public Professor Professor { get; set; } //O que permite ir buscar o Professor
+        public int ProfessorId { get; set; } //Chave estrangeira
+
     }
 }
