@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using ProjetoTrails4Health;
 
-namespace SportStore
+namespace ProjetoTrails4Health
 {
     public class Program
     {
