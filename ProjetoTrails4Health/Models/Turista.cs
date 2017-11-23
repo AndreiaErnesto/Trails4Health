@@ -15,7 +15,6 @@ namespace ProjetoTrails4Health.Models
         public string Telemovel { get; set; }
         public string DataNascimento { get; set; }
         public string NIF { get; set; }
-        public int TrilhoId { get; set; }
 
         public ICollection<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos { get; set; }  //Relacionamentos
         public ICollection<Resposta_Questionario> Respostas_Questionario { get; set; }
