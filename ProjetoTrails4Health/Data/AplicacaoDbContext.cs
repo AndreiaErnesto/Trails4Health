@@ -18,15 +18,15 @@ namespace ProjetoTrails4Health.Data
         public DbSet<Trilho> Trilhos;
         public DbSet<Etapa> Etapas;
         public DbSet<Trilho_Etapa> Trilhos_Etapas;
-<<<<<<< HEAD
+
         public DbSet<Turista> Turistas;
         public DbSet<Professor> Professor;
         public DbSet<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos;
         public DbSet<Resposta_Questionario> Respostas_Questionario;
-=======
+
         public DbSet<Dificuldade> Dificuldades;
 
->>>>>>> master
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Model keys
@@ -45,7 +45,6 @@ namespace ProjetoTrails4Health.Data
                 .WithMany(e => e.Trilhos_Etapas)
                 .HasForeignKey(te => te.EtapaId);
 
-<<<<<<< HEAD
             //AGENDA _ TRILHO _ TURISTA
             modelBuilder.Entity<Agenda_Turista_Trilho>()
                 .HasKey(tt => new { tt.TrilhoId, tt.TuristaId }); //chaves estrangeiras
@@ -72,12 +71,11 @@ namespace ProjetoTrails4Health.Data
                 .WithMany(p => p.Trilhos)
                 .HasForeignKey(t => t.ProfessorId);
 
-=======
             modelBuilder.Entity<Trilho>()
                 .HasOne(t => t.Dificuldade)
                 .WithMany(d => d.Trilhos)
                 .HasForeignKey(t => t.DificuldadeId);
->>>>>>> master
+
         }
     }
 }
