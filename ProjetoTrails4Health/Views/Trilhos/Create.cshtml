@@ -1,0 +1,86 @@
+@model ProjetoTrails4Health.Models.Trilho
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Trilho</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Nome_Trilho" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Nome_Trilho" class="form-control" />
+                <span asp-validation-for="Nome_Trilho" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Local_Inicio_Trilho" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Local_Inicio_Trilho" class="form-control" />
+                <span asp-validation-for="Local_Inicio_Trilho" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Local_Fim_Trilho" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Local_Fim_Trilho" class="form-control" />
+                <span asp-validation-for="Local_Fim_Trilho" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Distancia_Total" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Distancia_Total" class="form-control" />
+                <span asp-validation-for="Distancia_Total" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Duracao_Media" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Duracao_Media" class="form-control" />
+                <span asp-validation-for="Duracao_Media" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Esta_Ativo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Esta_Ativo" class="form-control" />
+                <span asp-validation-for="Esta_Ativo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Tempo_Gasto" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Tempo_Gasto" class="form-control" />
+                <span asp-validation-for="Tempo_Gasto" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProfessorId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="ProfessorId" class ="form-control" asp-items="ViewBag.ProfessorId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DificuldadeId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="DificuldadeId" class ="form-control" asp-items="ViewBag.DificuldadeId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

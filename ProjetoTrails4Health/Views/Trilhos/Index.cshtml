@@ -1,0 +1,83 @@
+@model IEnumerable<ProjetoTrails4Health.Models.Trilho>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome_Trilho)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Local_Inicio_Trilho)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Local_Fim_Trilho)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Distancia_Total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duracao_Media)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Esta_Ativo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tempo_Gasto)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dificuldade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Professor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome_Trilho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Local_Inicio_Trilho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Local_Fim_Trilho)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distancia_Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracao_Media)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Esta_Ativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tempo_Gasto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dificuldade.DificuldadeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Professor.ProfessorId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TrilhoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TrilhoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TrilhoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
