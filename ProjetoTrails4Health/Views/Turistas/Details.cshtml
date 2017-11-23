@@ -58,15 +58,10 @@
         <dd>
             @Html.DisplayFor(model => model.NIF)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TrilhoId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TrilhoId)
-        </dd>
+        
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.TuristaId">Edit</a> |
-    <a asp-action="Index">Voltar à lista</a>
+    <a asp-action="Edit" asp-route-id="@Model.TuristaId">Editar</a> |
+    <a asp-action="Index">Voltar para lista</a>
 </div>
