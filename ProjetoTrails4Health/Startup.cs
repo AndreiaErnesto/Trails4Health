@@ -64,6 +64,8 @@ namespace ProjetoTrails4Health
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            //ADICIONAR SEEDDATA
+            SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }
