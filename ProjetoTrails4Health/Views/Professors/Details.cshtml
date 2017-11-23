@@ -1,0 +1,78 @@
+@model ProjetoTrails4Health.Models.Professor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Professor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Morada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Morada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodPostal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodPostal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telemovel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telemovel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NIF)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NIF)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Funcao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Funcao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.N_Gabinete)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.N_Gabinete)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProfessorId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

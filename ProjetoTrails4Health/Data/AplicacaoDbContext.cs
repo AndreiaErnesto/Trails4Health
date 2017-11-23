@@ -20,7 +20,7 @@ namespace ProjetoTrails4Health.Data
         public DbSet<Trilho_Etapa> Trilhos_Etapas;
 
         public DbSet<Turista> Turistas;
-        public DbSet<Professor> Professor;
+        public DbSet<Professor> Professores;
         public DbSet<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos;
         public DbSet<Resposta_Questionario> Respostas_Questionario;
 
@@ -77,6 +77,12 @@ namespace ProjetoTrails4Health.Data
                 .HasForeignKey(t => t.DificuldadeId);
 
         }
+
+
+        public DbSet<ProjetoTrails4Health.Models.Turista> Turista { get; set; }
+
+
+        public DbSet<ProjetoTrails4Health.Models.Professor> Professor { get; set; }
     }
 }
 

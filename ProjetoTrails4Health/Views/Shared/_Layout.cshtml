@@ -33,6 +33,16 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Início</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Trilhos">Trilhos</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilizadores <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Turistas" asp-action="Index">Turistas</a></li>
+                            <li><a asp-area="" asp-controller="Professors" asp-action="Index">Professores</a></li>
+                        </ul>
+                    </li>
+
+                    
                     <li><a asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre nós</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contactos">Contactos</a></li>
