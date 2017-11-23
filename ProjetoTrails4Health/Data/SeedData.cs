@@ -22,8 +22,9 @@ namespace ProjetoTrails4Health.Data
         private static Trilho trilho2;
         private static Trilho trilho3;
         private static Trilho trilho4;
-        private static Trilho trilho5;
+        private static Trilho trilho5; 
         private static Trilho trilho6;
+        
         public static void EnsurePopulated(IServiceProvider serviceProvider) //Interface de provedor de serviços
         {
             AplicacaoDbContext dbContext = (AplicacaoDbContext)serviceProvider.GetService(typeof(AplicacaoDbContext));
@@ -79,12 +80,12 @@ namespace ProjetoTrails4Health.Data
         private static void PopulatedAgenda_Turistas_Trilhos(AplicacaoDbContext dbContext)
         {
             dbContext.Agenda_Turistas_Trilhos.AddRange(
-                new Agenda_Turista_Trilho {TuristaId =turista1.TuristaId,TrilhoId = trilho1.TrilhoId,   Estado_Agendamento = "Configurado" },
-                new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho2.TrilhoId,   Estado_Agendamento = "Cancelado"  },
-                new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId,   Estado_Agendamento = "Alterado"  },
-                new Agenda_Turista_Trilho { TuristaId = turista4.TuristaId, TrilhoId = trilho4.TrilhoId,  Estado_Agendamento = "Consultado"  },
-                new Agenda_Turista_Trilho { TuristaId = turista5.TuristaId, TrilhoId = trilho5.TrilhoId, Estado_Agendamento = "Agendado"  },
-                new Agenda_Turista_Trilho { TuristaId = turista6.TuristaId, TrilhoId = trilho2.TrilhoId,  Estado_Agendamento = "Cancelado"  }
+                new Agenda_Turista_Trilho {TuristaId =turista1.TuristaId,TrilhoId = trilho1.TrilhoId, Data_Reserva= new DateTime (2017,11,23), Data_Prevista_Inicio_Trilho= new DateTime(2017, 11, 26), Estado_Agendamento = "Configurado", Data_Estado_Agendamento= new DateTime(2017, 11, 24) },
+                new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho2.TrilhoId, Data_Reserva = new DateTime(2017, 11, 25) , Data_Prevista_Inicio_Trilho = new DateTime(2017, 11, 29), Estado_Agendamento = "Cancelado", Data_Estado_Agendamento = new DateTime(2017, 11, 27) },
+                new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId, Data_Reserva = new DateTime(2017, 11, 30) , Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 2), Estado_Agendamento = "Alterado", Data_Estado_Agendamento = new DateTime(2017, 12, 2) },
+                new Agenda_Turista_Trilho { TuristaId = turista4.TuristaId, TrilhoId = trilho4.TrilhoId, Data_Reserva = new DateTime(2017, 11, 23), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 15), Estado_Agendamento = "Consultado" , Data_Estado_Agendamento = new DateTime(2017, 11, 27) },
+                new Agenda_Turista_Trilho { TuristaId = turista5.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017, 11, 29), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 5), Estado_Agendamento = "Agendado" , Data_Estado_Agendamento = new DateTime(2017, 12, 3) },
+                new Agenda_Turista_Trilho { TuristaId = turista6.TuristaId, TrilhoId = trilho2.TrilhoId, Data_Reserva = new DateTime(2018, 01, 10), Data_Prevista_Inicio_Trilho = new DateTime(2018, 01, 10), Estado_Agendamento = "Cancelado" , Data_Estado_Agendamento = new DateTime(2018,01, 8) }
 
            );
         }
