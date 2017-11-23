@@ -18,6 +18,7 @@ namespace ProjetoTrails4Health.Data
         public DbSet<Trilho> Trilhos;
         public DbSet<Etapa> Etapas;
         public DbSet<Trilho_Etapa> Trilhos_Etapas;
+        public DbSet<Dificuldade> Dificuldades;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +36,10 @@ namespace ProjetoTrails4Health.Data
                 .WithMany(e => e.Trilhos_Etapas)
                 .HasForeignKey(te => te.EtapaId);
 
+            modelBuilder.Entity<Trilho>()
+                .HasOne(t => t.Dificuldade)
+                .WithMany(d => d.Trilhos)
+                .HasForeignKey(t => t.DificuldadeId);
         }
     }
 }
