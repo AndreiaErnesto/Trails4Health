@@ -69,11 +69,11 @@ namespace ProjetoTrails4Health.Data
         private static void PopulatedTrilhos(AplicacaoDbContext dbContext)
         {
             dbContext.Trilhos.AddRange(
-                new Trilho { Nome_Trilho = "Poço do Inferno", Local_Inicio_Trilho = "Ribeira de Leandres", Local_Fim_Trilho = "Poço do Inferno", Distancia_Total = "2,5 km", Duracao_Media = "3h45min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId},
-                new Trilho { Nome_Trilho = "Torre", Local_Inicio_Trilho = "Vila de Manteigas", Local_Fim_Trilho = "Torre", Distancia_Total = "16 km", Duracao_Media = "14h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId },
-                new Trilho { Nome_Trilho = "Covão de Santa Maria", Local_Inicio_Trilho = "Pousada de São Lourenço", Local_Fim_Trilho = "Covão de Santa Maria", Distancia_Total = "4 km", Duracao_Media = "4h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId },
-                new Trilho { Nome_Trilho = "Corredor de Mouros", Local_Inicio_Trilho = "Covão da Ponte", Local_Fim_Trilho = "Corredor de Mouros", Distancia_Total = "8 km", Duracao_Media = "6h15min", Esta_Ativo = "Sim", Tempo_Gasto = "" , ProfessorId = professor2.ProfessorId },
-                new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId }
+               trilho1 = new Trilho { Nome_Trilho = "Poço do Inferno", Local_Inicio_Trilho = "Ribeira de Leandres", Local_Fim_Trilho = "Poço do Inferno", Distancia_Total = "2,5 km", Duracao_Media = "3h45min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId},
+               trilho2 = new Trilho { Nome_Trilho = "Torre", Local_Inicio_Trilho = "Vila de Manteigas", Local_Fim_Trilho = "Torre", Distancia_Total = "16 km", Duracao_Media = "14h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId },
+               trilho3 = new Trilho { Nome_Trilho = "Covão de Santa Maria", Local_Inicio_Trilho = "Pousada de São Lourenço", Local_Fim_Trilho = "Covão de Santa Maria", Distancia_Total = "4 km", Duracao_Media = "4h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId },
+               trilho4 = new Trilho { Nome_Trilho = "Corredor de Mouros", Local_Inicio_Trilho = "Covão da Ponte", Local_Fim_Trilho = "Corredor de Mouros", Distancia_Total = "8 km", Duracao_Media = "6h15min", Esta_Ativo = "Sim", Tempo_Gasto = "" , ProfessorId = professor2.ProfessorId },
+               trilho5= new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId }
            );
         }
         private static void PopulatedAgenda_Turistas_Trilhos(AplicacaoDbContext dbContext)
@@ -84,7 +84,7 @@ namespace ProjetoTrails4Health.Data
                 new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId,   Estado_Agendamento = "Alterado"  },
                 new Agenda_Turista_Trilho { TuristaId = turista4.TuristaId, TrilhoId = trilho4.TrilhoId,  Estado_Agendamento = "Consultado"  },
                 new Agenda_Turista_Trilho { TuristaId = turista5.TuristaId, TrilhoId = trilho5.TrilhoId, Estado_Agendamento = "Agendado"  },
-                new Agenda_Turista_Trilho { TuristaId = turista6.TuristaId, TrilhoId = trilho6.TrilhoId,  Estado_Agendamento = "Cancelado"  }
+                new Agenda_Turista_Trilho { TuristaId = turista6.TuristaId, TrilhoId = trilho2.TrilhoId,  Estado_Agendamento = "Cancelado"  }
 
            );
         }
