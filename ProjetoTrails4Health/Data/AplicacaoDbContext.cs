@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace ProjetoTrails4Health.Data
 {
-    public class TrilhoDbContext : DbContext
+    public class AplicacaoDbContext : DbContext
     {
-        public TrilhoDbContext(
-            DbContextOptions<TrilhoDbContext> options) : base(options)
+        public AplicacaoDbContext(
+            DbContextOptions<AplicacaoDbContext> options) : base(options)
         {
         }
 
@@ -23,17 +23,17 @@ namespace ProjetoTrails4Health.Data
         {
             // Model keys
             modelBuilder.Entity<Trilho_Etapa>()
-                .HasKey(te => new { te.ID_Trilho, te.ID_Etapa }); //chaves estrangeiras
+                .HasKey(te => new { te.TrilhoId, te.EtapaId }); //chaves estrangeiras
 
             modelBuilder.Entity<Trilho_Etapa>()
                 .HasOne(te => te.Trilho)
                 .WithMany(t => t.Trilhos_Etapas)
-                .HasForeignKey(te => te.ID_Trilho);
+                .HasForeignKey(te => te.TrilhoId);
 
             modelBuilder.Entity<Trilho_Etapa>()
                 .HasOne(te => te.Etapa)
                 .WithMany(e => e.Trilhos_Etapas)
-                .HasForeignKey(te => te.ID_Etapa);
+                .HasForeignKey(te => te.EtapaId);
 
         }
     }

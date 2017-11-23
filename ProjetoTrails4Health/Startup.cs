@@ -34,8 +34,8 @@ namespace ProjetoTrails4Health
 
             //Ficheiro .json Database=Books - criação de base de dados com este nome
             //Ficheiro .json MultipleActiveResultSets - vários utilizadores a aceder com diferentes querys
-            services.AddDbContext<TrilhoDbContext>(options =>
-                 options.UseSqlServer(Configuration.GetConnectionString("ConectionStringsTrilhos"))
+            services.AddDbContext<AplicacaoDbContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("ConectionStringsAplicacao"))
             );
         }
 

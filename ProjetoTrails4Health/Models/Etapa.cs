@@ -4,7 +4,7 @@ namespace ProjetoTrails4Health.Models
 {
     public class Etapa
     {
-       public int ID_Etapa { get; set; }
+       public int EtapaId { get; set; }
        public int Distancia { get; set; }
        public string Local_Inicio_Trilho { get; set; }
        public string Local_Fim_Trilho { get; set; }
