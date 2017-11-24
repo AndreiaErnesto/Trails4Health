@@ -142,7 +142,7 @@ namespace ProjetoTrails4Health.Migrations
                     Data_Estado_Agendamento = table.Column<DateTime>(nullable: false),
                     Data_Prevista_Inicio_Trilho = table.Column<DateTime>(nullable: false),
                     Data_Reserva = table.Column<DateTime>(nullable: false),
-                    Estado_Agendamento = table.Column<int>(nullable: false)
+                    Estado_Agendamento = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
