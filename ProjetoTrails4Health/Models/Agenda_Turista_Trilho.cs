@@ -9,7 +9,7 @@ namespace ProjetoTrails4Health.Models
     {
         public Trilho Trilho { get; set; }
         public int TrilhoId { get; set; }
-
+        public int Tempo_Gasto { get; set; }
         public Turista Turista { get; set; }
         public int TuristaId { get; set; }
 
