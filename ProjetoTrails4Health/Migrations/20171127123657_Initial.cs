@@ -45,14 +45,14 @@ namespace ProjetoTrails4Health.Migrations
                     ProfessorId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CodPostal = table.Column<string>(nullable: true),
-                    DataNascimento = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
+                    DataNascimento = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
                     Funcao = table.Column<string>(nullable: true),
                     Morada = table.Column<string>(nullable: true),
-                    NIF = table.Column<string>(nullable: true),
+                    NIF = table.Column<string>(nullable: false),
                     N_Gabinete = table.Column<string>(nullable: true),
-                    Nome = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
                     Telemovel = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -67,12 +67,12 @@ namespace ProjetoTrails4Health.Migrations
                     TuristaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CodPostal = table.Column<string>(nullable: true),
-                    DataNascimento = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
+                    DataNascimento = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false),
                     Morada = table.Column<string>(nullable: true),
-                    NIF = table.Column<string>(nullable: true),
-                    Nome = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
+                    NIF = table.Column<string>(nullable: false),
+                    Nome = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
                     Telemovel = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -142,7 +142,8 @@ namespace ProjetoTrails4Health.Migrations
                     Data_Estado_Agendamento = table.Column<DateTime>(nullable: false),
                     Data_Prevista_Inicio_Trilho = table.Column<DateTime>(nullable: false),
                     Data_Reserva = table.Column<DateTime>(nullable: false),
-                    Estado_Agendamento = table.Column<string>(nullable: true)
+                    Estado_Agendamento = table.Column<string>(nullable: true),
+                    Tempo_Gasto = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

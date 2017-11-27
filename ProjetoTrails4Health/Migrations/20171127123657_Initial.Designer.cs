@@ -8,7 +8,7 @@ using ProjetoTrails4Health.Data;
 namespace ProjetoTrails4Health.Migrations
 {
     [DbContext(typeof(AplicacaoDbContext))]
-    [Migration("20171124091731_Initial")]
+    [Migration("20171127123657_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,8 @@ namespace ProjetoTrails4Health.Migrations
                     b.Property<DateTime>("Data_Reserva");
 
                     b.Property<string>("Estado_Agendamento");
+
+                    b.Property<int>("Tempo_Gasto");
 
                     b.HasKey("TrilhoId", "TuristaId");
 
@@ -75,21 +77,26 @@ namespace ProjetoTrails4Health.Migrations
 
                     b.Property<string>("CodPostal");
 
-                    b.Property<string>("DataNascimento");
+                    b.Property<string>("DataNascimento")
+                        .IsRequired();
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .IsRequired();
 
                     b.Property<string>("Funcao");
 
                     b.Property<string>("Morada");
 
-                    b.Property<string>("NIF");
+                    b.Property<string>("NIF")
+                        .IsRequired();
 
                     b.Property<string>("N_Gabinete");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired();
 
                     b.Property<string>("Telemovel");
 
@@ -170,17 +177,22 @@ namespace ProjetoTrails4Health.Migrations
 
                     b.Property<string>("CodPostal");
 
-                    b.Property<string>("DataNascimento");
+                    b.Property<string>("DataNascimento")
+                        .IsRequired();
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .IsRequired();
 
                     b.Property<string>("Morada");
 
-                    b.Property<string>("NIF");
+                    b.Property<string>("NIF")
+                        .IsRequired();
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired();
 
                     b.Property<string>("Telemovel");
 
