@@ -20,7 +20,14 @@
         <div class="form-group">
             <label asp-for="TuristaId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="TuristaId" class ="form-control" asp-items="ViewBag.TuristaId"></select>
+                <select asp-for="TuristaId" class ="form-control" asp-items="ViewBag.TuristaId">
+                    <option value="0">Escolha uma opcao </option>
+                    <option value="1">Turista1</option>
+                    <option value="2">Turista2</option>
+                    <option value="2">Turista3</option>
+                    <option value="2">Turista4</option>
+                    <option value="2">Turista5</option>
+                </select>
             </div>
         </div>
         <!--<div class="form-group">
