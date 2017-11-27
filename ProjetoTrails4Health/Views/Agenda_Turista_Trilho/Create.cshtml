@@ -11,25 +11,25 @@
         <h4>Agenda</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
+       <!--<div class="form-group">
             <label asp-for="TrilhoId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <select asp-for="TrilhoId" class ="form-control" asp-items="ViewBag.TrilhoId"></select>
             </div>
-        </div>
+        </div>--> 
         <div class="form-group">
             <label asp-for="TuristaId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <select asp-for="TuristaId" class ="form-control" asp-items="ViewBag.TuristaId"></select>
             </div>
         </div>
-        <div class="form-group">
+        <!--<div class="form-group">
             <label asp-for="Data_Reserva" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Data_Reserva" class="form-control" />
                 <span asp-validation-for="Data_Reserva" class="text-danger"></span>
             </div>
-        </div>
+        </div>-->
         <div class="form-group">
             <label asp-for="Data_Prevista_Inicio_Trilho" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -37,20 +37,20 @@
                 <span asp-validation-for="Data_Prevista_Inicio_Trilho" class="text-danger"></span>
             </div>
         </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
             <label asp-for="Estado_Agendamento" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Estado_Agendamento" class="form-control" />
                 <span asp-validation-for="Estado_Agendamento" class="text-danger"></span>
             </div>
-        </div>
-        <div class="form-group">
+        </div>-->
+       <!-- <div class="form-group">
             <label asp-for="Data_Estado_Agendamento" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="Data_Estado_Agendamento" class="form-control" />
                 <span asp-validation-for="Data_Estado_Agendamento" class="text-danger"></span>
             </div>
-        </div>
+        </div>-->
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
