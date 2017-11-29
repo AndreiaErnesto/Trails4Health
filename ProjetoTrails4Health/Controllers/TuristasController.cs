@@ -54,7 +54,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TuristaId,Nome,Password,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF,TrilhoId")] Turista turista)
+        public async Task<IActionResult> Create([Bind("TuristaId,Nome,Password,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TuristaId,Nome,Password,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF,TrilhoId")] Turista turista)
+        public async Task<IActionResult> Edit(int id, [Bind("TuristaId,Nome,Password,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
         {
             if (id != turista.TuristaId)
             {

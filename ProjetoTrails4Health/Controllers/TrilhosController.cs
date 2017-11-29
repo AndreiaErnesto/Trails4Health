@@ -50,7 +50,7 @@ namespace ProjetoTrails4Health.Controllers
         public IActionResult Create()
         {
             ViewData["DificuldadeId"] = new SelectList(_context.Set<Dificuldade>(), "DificuldadeId", "DificuldadeId");
-            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "ProfessorId");
+            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "DataNascimento");
             return View();
         }
 
@@ -68,7 +68,7 @@ namespace ProjetoTrails4Health.Controllers
                 return RedirectToAction("Index");
             }
             ViewData["DificuldadeId"] = new SelectList(_context.Set<Dificuldade>(), "DificuldadeId", "DificuldadeId", trilho.DificuldadeId);
-            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "ProfessorId", trilho.ProfessorId);
+            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "DataNascimento", trilho.ProfessorId);
             return View(trilho);
         }
 
@@ -86,7 +86,7 @@ namespace ProjetoTrails4Health.Controllers
                 return NotFound();
             }
             ViewData["DificuldadeId"] = new SelectList(_context.Set<Dificuldade>(), "DificuldadeId", "DificuldadeId", trilho.DificuldadeId);
-            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "ProfessorId", trilho.ProfessorId);
+            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "DataNascimento", trilho.ProfessorId);
             return View(trilho);
         }
 
@@ -123,7 +123,7 @@ namespace ProjetoTrails4Health.Controllers
                 return RedirectToAction("Index");
             }
             ViewData["DificuldadeId"] = new SelectList(_context.Set<Dificuldade>(), "DificuldadeId", "DificuldadeId", trilho.DificuldadeId);
-            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "ProfessorId", trilho.ProfessorId);
+            ViewData["ProfessorId"] = new SelectList(_context.Professor, "ProfessorId", "DataNascimento", trilho.ProfessorId);
             return View(trilho);
         }
 

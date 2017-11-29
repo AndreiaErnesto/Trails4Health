@@ -37,7 +37,7 @@ namespace ProjetoTrails4Health.Controllers
             var agenda_Turista_Trilho = await _context.Agenda_Turista_Trilho
                 .Include(a => a.Trilho)
                 .Include(a => a.Turista)
-                .SingleOrDefaultAsync(m => m.TrilhoId == id);
+                .SingleOrDefaultAsync(m => m.Agenda_Turista_TrilhoId == id);
             if (agenda_Turista_Trilho == null)
             {
                 return NotFound();
@@ -49,8 +49,8 @@ namespace ProjetoTrails4Health.Controllers
         // GET: Agenda_Turista_Trilho/Create
         public IActionResult Create()
         {
-            ViewData["TrilhoId"] = new SelectList(_context.Trilho, "TrilhoId", "TrilhoId");
-            ViewData["TuristaId"] = new SelectList(_context.Turista, "TuristaId", "TuristaId");
+            ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "TrilhoId");
+            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "DataNascimento");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrilhoId,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
+        public async Task<IActionResult> Create([Bind("Agenda_Turista_TrilhoId,TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
             if (ModelState.IsValid)
             {
@@ -67,8 +67,8 @@ namespace ProjetoTrails4Health.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["TrilhoId"] = new SelectList(_context.Trilho, "TrilhoId", "TrilhoId", agenda_Turista_Trilho.TrilhoId);
-            ViewData["TuristaId"] = new SelectList(_context.Turista, "TuristaId", "TuristaId", agenda_Turista_Trilho.TuristaId);
+            ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "TrilhoId", agenda_Turista_Trilho.TrilhoId);
+            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "DataNascimento", agenda_Turista_Trilho.TuristaId);
             return View(agenda_Turista_Trilho);
         }
 
@@ -80,13 +80,13 @@ namespace ProjetoTrails4Health.Controllers
                 return NotFound();
             }
 
-            var agenda_Turista_Trilho = await _context.Agenda_Turista_Trilho.SingleOrDefaultAsync(m => m.TrilhoId == id);
+            var agenda_Turista_Trilho = await _context.Agenda_Turista_Trilho.SingleOrDefaultAsync(m => m.Agenda_Turista_TrilhoId == id);
             if (agenda_Turista_Trilho == null)
             {
                 return NotFound();
             }
-            ViewData["TrilhoId"] = new SelectList(_context.Trilho, "TrilhoId", "TrilhoId", agenda_Turista_Trilho.TrilhoId);
-            ViewData["TuristaId"] = new SelectList(_context.Turista, "TuristaId", "TuristaId", agenda_Turista_Trilho.TuristaId);
+            ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "TrilhoId", agenda_Turista_Trilho.TrilhoId);
+            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "DataNascimento", agenda_Turista_Trilho.TuristaId);
             return View(agenda_Turista_Trilho);
         }
 
@@ -95,9 +95,9 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TrilhoId,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
+        public async Task<IActionResult> Edit(int id, [Bind("Agenda_Turista_TrilhoId,TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
-            if (id != agenda_Turista_Trilho.TrilhoId)
+            if (id != agenda_Turista_Trilho.Agenda_Turista_TrilhoId)
             {
                 return NotFound();
             }
@@ -111,7 +111,7 @@ namespace ProjetoTrails4Health.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!Agenda_Turista_TrilhoExists(agenda_Turista_Trilho.TrilhoId))
+                    if (!Agenda_Turista_TrilhoExists(agenda_Turista_Trilho.Agenda_Turista_TrilhoId))
                     {
                         return NotFound();
                     }
@@ -122,8 +122,8 @@ namespace ProjetoTrails4Health.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["TrilhoId"] = new SelectList(_context.Trilho, "TrilhoId", "TrilhoId", agenda_Turista_Trilho.TrilhoId);
-            ViewData["TuristaId"] = new SelectList(_context.Turista, "TuristaId", "TuristaId", agenda_Turista_Trilho.TuristaId);
+            ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "TrilhoId", agenda_Turista_Trilho.TrilhoId);
+            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "DataNascimento", agenda_Turista_Trilho.TuristaId);
             return View(agenda_Turista_Trilho);
         }
 
@@ -138,7 +138,7 @@ namespace ProjetoTrails4Health.Controllers
             var agenda_Turista_Trilho = await _context.Agenda_Turista_Trilho
                 .Include(a => a.Trilho)
                 .Include(a => a.Turista)
-                .SingleOrDefaultAsync(m => m.TrilhoId == id);
+                .SingleOrDefaultAsync(m => m.Agenda_Turista_TrilhoId == id);
             if (agenda_Turista_Trilho == null)
             {
                 return NotFound();
@@ -152,7 +152,7 @@ namespace ProjetoTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var agenda_Turista_Trilho = await _context.Agenda_Turista_Trilho.SingleOrDefaultAsync(m => m.TrilhoId == id);
+            var agenda_Turista_Trilho = await _context.Agenda_Turista_Trilho.SingleOrDefaultAsync(m => m.Agenda_Turista_TrilhoId == id);
             _context.Agenda_Turista_Trilho.Remove(agenda_Turista_Trilho);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -160,7 +160,7 @@ namespace ProjetoTrails4Health.Controllers
 
         private bool Agenda_Turista_TrilhoExists(int id)
         {
-            return _context.Agenda_Turista_Trilho.Any(e => e.TrilhoId == id);
+            return _context.Agenda_Turista_Trilho.Any(e => e.Agenda_Turista_TrilhoId == id);
         }
     }
 }

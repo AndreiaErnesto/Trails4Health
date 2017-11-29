@@ -7,86 +7,91 @@ using System.Threading.Tasks;
 namespace ProjetoTrails4Health.Data
 {
     public static class SeedData
-    {
-        private static Professor professor1;
-        private static Professor professor2;
-
-        private static Turista turista1;
-        private static Turista turista2;
-        private static Turista turista3;
-        private static Turista turista4;
-        private static Turista turista5;
-        private static Turista turista6;
-
-        private static Trilho trilho1;
-        private static Trilho trilho2;
-        private static Trilho trilho3;
-        private static Trilho trilho4;
-        private static Trilho trilho5; 
-        private static Trilho trilho6;
-        
+    {        
         public static void EnsurePopulated(IServiceProvider serviceProvider) //Interface de provedor de serviços
         {
             AplicacaoDbContext dbContext = (AplicacaoDbContext)serviceProvider.GetService(typeof(AplicacaoDbContext));
 
-            if (!dbContext.Turistas.Any())
+            if (!dbContext.Turista.Any())
             {
                 PopulatedTuristas(dbContext);
+                dbContext.SaveChanges();
             }
 
-            if (!dbContext.Professores.Any())
+            if (!dbContext.Professor.Any())
             {
                 PopulatedProfessores(dbContext);
+                dbContext.SaveChanges();
             }
 
-            if (!dbContext.Trilhos.Any())
+            if (!dbContext.Trilho.Any())
             {
                 PopulatedTrilhos(dbContext);
+                dbContext.SaveChanges();
             }
-            dbContext.SaveChanges();
+            
         }
 
         private static void PopulatedTuristas(AplicacaoDbContext dbContext)
         {
-            dbContext.Turistas.AddRange(
-                turista1 = new Turista { Nome = "Pedro", Password = "PedroSanches21", Morada = "Rua Salgado n15", CodPostal = "2680-104", Email = "pedro@gmail.com", Telemovel = "914009711", DataNascimento = "22-11-1996", NIF = "987654321" },
-                turista2 = new Turista { Nome = "Andreia", Password = "AndreiaErnesto21", Morada = "Rua Ernesto n1", CodPostal = "6290-081", Email = "andreia@gmail.com", Telemovel = "965874555", DataNascimento = "03-12-1990", NIF = "234567889" },
-                turista3 = new Turista { Nome = "Maria", Password = "Maria21", Morada = "Rua Outeiro n1", CodPostal = "2586-100", Email = "maria@gmail.com", Telemovel = "912233344", DataNascimento = "28-02-1970", NIF = "589455366" },
-                turista4 = new Turista { Nome = "João", Password = "Joao21", Morada = "Rua Franciso Sá Carneiro n3", CodPostal = "1566-104", Email = "joao@gmail.com", Telemovel = "912358459", DataNascimento = "01-03-1996", NIF = "987654321" },
-                turista5 = new Turista { Nome = "Telmo", Password = "Telmo21", Morada = "Travessa n2", CodPostal = "7589-036", Email = "telmo@gmail.com", Telemovel = "965423568", DataNascimento = "12-12-1992", NIF = "123456789" },
-                turista6 = new Turista { Nome = "Rodrigo", Password = "Rodrigo21", Morada = "Rua Outeiro n1", CodPostal = "1445-100", Email = "rodrigo@gmail.com", Telemovel = "935789456", DataNascimento = "28-02-1978", NIF = "568123456" }
+            dbContext.Turista.AddRange(
+                new Turista { Nome = "Pedro", Password = "PedroSanches21", Morada = "Rua Salgado n15", CodPostal = "2680-104", Email = "pedro@gmail.com", Telemovel = "914009711", DataNascimento = "22-11-1996", NIF = "987654321" },
+                new Turista { Nome = "Andreia", Password = "AndreiaErnesto21", Morada = "Rua Ernesto n1", CodPostal = "6290-081", Email = "andreia@gmail.com", Telemovel = "965874555", DataNascimento = "03-12-1990", NIF = "234567889" },
+                new Turista { Nome = "Maria", Password = "Maria21", Morada = "Rua Outeiro n1", CodPostal = "2586-100", Email = "maria@gmail.com", Telemovel = "912233344", DataNascimento = "28-02-1970", NIF = "589455366" },
+                new Turista { Nome = "João", Password = "Joao21", Morada = "Rua Franciso Sá Carneiro n3", CodPostal = "1566-104", Email = "joao@gmail.com", Telemovel = "912358459", DataNascimento = "01-03-1996", NIF = "977654321" },
+                new Turista { Nome = "Telmo", Password = "Telmo21", Morada = "Travessa n2", CodPostal = "7589-036", Email = "telmo@gmail.com", Telemovel = "965423568", DataNascimento = "12-12-1992", NIF = "123456789" },
+                new Turista { Nome = "Rodrigo", Password = "Rodrigo21", Morada = "Rua Outeiro n1", CodPostal = "1445-100", Email = "rodrigo@gmail.com", Telemovel = "935789456", DataNascimento = "28-02-1978", NIF = "568123456" }
             );
         }
 
+       
+
         private static void PopulatedProfessores(AplicacaoDbContext dbContext)
         {
-            dbContext.Professores.AddRange(
-                professor1 = new Professor { Nome = "Matias", Password = "Matias21", Morada = "Rua Viriato n15", CodPostal = "1222-104", Email = "matias@gmail.com", Telemovel = "92456899", DataNascimento = "03-11-1996", NIF = "236512378" },
-                professor2 = new Professor { Nome = "Célia", Password = "Celia21", Morada = "Rua Alberto Ramos n1", CodPostal = "5789-081", Email = "celia@gmail.com", Telemovel = "968256365", DataNascimento = "03-05-1991", NIF = "2541236987" }
+            dbContext.Professor.AddRange(
+                new Professor { Nome = "Matias", Password = "Matias21", Morada = "Rua Viriato n15", CodPostal = "1222-104", Email = "matias@gmail.com", Telemovel = "92456899", DataNascimento = "03-11-1996", NIF = "236512378" },
+                new Professor { Nome = "Célia", Password = "Celia21", Morada = "Rua Alberto Ramos n1", CodPostal = "5789-081", Email = "celia@gmail.com", Telemovel = "968256365", DataNascimento = "03-05-1991", NIF = "2541236987" }
             );
         }
 
         private static void PopulatedTrilhos(AplicacaoDbContext dbContext)
         {
-            dbContext.Trilhos.AddRange(
-               trilho1 = new Trilho { Nome_Trilho = "Poço do Inferno", Local_Inicio_Trilho = "Ribeira de Leandres", Local_Fim_Trilho = "Poço do Inferno", Distancia_Total = "2,5 km", Duracao_Media = "3h45min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId},
-               trilho2 = new Trilho { Nome_Trilho = "Torre", Local_Inicio_Trilho = "Vila de Manteigas", Local_Fim_Trilho = "Torre", Distancia_Total = "16 km", Duracao_Media = "14h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId },
-               trilho3 = new Trilho { Nome_Trilho = "Covão de Santa Maria", Local_Inicio_Trilho = "Pousada de São Lourenço", Local_Fim_Trilho = "Covão de Santa Maria", Distancia_Total = "4 km", Duracao_Media = "4h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId },
-               trilho4 = new Trilho { Nome_Trilho = "Corredor de Mouros", Local_Inicio_Trilho = "Covão da Ponte", Local_Fim_Trilho = "Corredor de Mouros", Distancia_Total = "8 km", Duracao_Media = "6h15min", Esta_Ativo = "Sim", Tempo_Gasto = "" , ProfessorId = professor2.ProfessorId },
-               trilho5= new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId }
-           );
+            Professor professor1 = dbContext.Professor.SingleOrDefault(p => p.NIF == "236512378");
+            Professor professor2 = dbContext.Professor.SingleOrDefault(p => p.NIF == "2541236987");
+
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Poço do Inferno", Local_Inicio_Trilho = "Ribeira de Leandres", Local_Fim_Trilho = "Poço do Inferno", Distancia_Total = "2,5 km", Duracao_Media = "3h45min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId });
+
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Torre", Local_Inicio_Trilho = "Vila de Manteigas", Local_Fim_Trilho = "Torre", Distancia_Total = "16 km", Duracao_Media = "14h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId});
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Covão de Santa Maria", Local_Inicio_Trilho = "Pousada de São Lourenço", Local_Fim_Trilho = "Covão de Santa Maria", Distancia_Total = "4 km", Duracao_Media = "4h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId });
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Corredor de Mouros", Local_Inicio_Trilho = "Covão da Ponte", Local_Fim_Trilho = "Corredor de Mouros", Distancia_Total = "8 km", Duracao_Media = "6h15min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId });
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId });
+         
         }
         private static void PopulatedAgenda_Turistas_Trilhos(AplicacaoDbContext dbContext)
         {
-            dbContext.Agenda_Turistas_Trilhos.AddRange(
-                new Agenda_Turista_Trilho {TuristaId =turista1.TuristaId,TrilhoId = trilho1.TrilhoId, Data_Reserva= new DateTime (2017,11,21), Data_Prevista_Inicio_Trilho= new DateTime(2017, 11, 26), Tempo_Gasto=00, Estado_Agendamento = "Agendado", Data_Estado_Agendamento= new DateTime(2017, 11, 24) },
-                new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho2.TrilhoId, Data_Reserva = new DateTime(2017, 11, 25) , Data_Prevista_Inicio_Trilho = new DateTime(2017, 11, 29), Tempo_Gasto = 1-30, Estado_Agendamento = "Realizado", Data_Estado_Agendamento = new DateTime(2017, 11, 27) },
-                new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId, Data_Reserva = new DateTime(2017, 11, 30) , Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 2), Tempo_Gasto = 00-00, Estado_Agendamento = "Não Realizado", Data_Estado_Agendamento = new DateTime(2017, 12, 2) },
-                new Agenda_Turista_Trilho { TuristaId = turista4.TuristaId, TrilhoId = trilho4.TrilhoId, Data_Reserva = new DateTime(2017, 11, 23), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 15), Tempo_Gasto = 2 - 00, Estado_Agendamento = "Realizado" , Data_Estado_Agendamento = new DateTime(2017, 11, 27) },
-                new Agenda_Turista_Trilho { TuristaId = turista5.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017, 11, 29), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 5), Estado_Agendamento = "Agendado" , Data_Estado_Agendamento = new DateTime(2017, 12, 3) },
-                new Agenda_Turista_Trilho { TuristaId = turista6.TuristaId, TrilhoId = trilho2.TrilhoId, Data_Reserva = new DateTime(2018, 01, 10), Data_Prevista_Inicio_Trilho = new DateTime(2018, 01, 10), Estado_Agendamento = "Cancelado" , Data_Estado_Agendamento = new DateTime(2018,01, 8) }
+            Turista turista1 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "987654321");
+            Turista turista2 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "234567889");
+            Turista turista3 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "589455366");
+            Turista turista4 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "977654321");
+            Turista turista5 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "123456789");
+            Turista turista6 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "568123456");
+     
+            Trilho trilho1 = dbContext.Trilho.SingleOrDefault(t => t.Nome_Trilho == "Poço do Inferno");
+            Trilho trilho2 = dbContext.Trilho.SingleOrDefault(t => t.Nome_Trilho == "Torre");
+            Trilho trilho3 = dbContext.Trilho.SingleOrDefault(t => t.Nome_Trilho == "Covão de Santa Maria");
+            Trilho trilho4 = dbContext.Trilho.SingleOrDefault(t => t.Nome_Trilho == "Corredor de Mouros");
+            Trilho trilho5 = dbContext.Trilho.SingleOrDefault(t => t.Nome_Trilho == "Vale Glaciar do Zezere");
 
-           );
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista1.TuristaId, TrilhoId = trilho1.TrilhoId, Data_Reserva = new DateTime(2017, 11, 21), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 26), Tempo_Gasto = 00, Estado_Agendamento = "Agendado", Data_Estado_Agendamento = new DateTime(2017, 11, 24) });
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista1.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017, 10, 03), Data_Prevista_Inicio_Trilho = new DateTime(2017, 11, 30), Tempo_Gasto = 00, Estado_Agendamento = "Agendado", Data_Estado_Agendamento = new DateTime(2017, 11, 27) });
+
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho2.TrilhoId, Data_Reserva = new DateTime(2017, 07, 03), Data_Prevista_Inicio_Trilho = new DateTime(2017, 10, 15), Tempo_Gasto = 00, Estado_Agendamento = "Realizado", Data_Estado_Agendamento = new DateTime(2017, 12, 02) });
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017, 11, 10), Data_Prevista_Inicio_Trilho = new DateTime(2017, 11, 18), Tempo_Gasto = 00, Estado_Agendamento = "Não Realizado", Data_Estado_Agendamento = new DateTime(2017, 11, 27) });
+
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId, Data_Reserva = new DateTime(2017, 11, 15), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 16), Tempo_Gasto = 00, Estado_Agendamento = "Cancelado", Data_Estado_Agendamento = new DateTime(2017, 12, 15) });
+            
+
+           
         }
     }
 }

@@ -9,7 +9,7 @@ namespace ProjetoTrails4Health.Models
 {
     
 
-    public class EFTuristaRepository : ITuristaRepository
+    public class EFTuristaRepository //: ITuristaRepository
     {
         private AplicacaoDbContext dbContext; //contexto da Base de dados
 
@@ -19,6 +19,6 @@ namespace ProjetoTrails4Health.Models
             this.dbContext = dbContext;
         }
 
-        public IEnumerable<Turista> Turista => dbContext.Turistas;
+        //public IEnumerable<Turista> Turista => dbContext.Turistas;
     }
 }
