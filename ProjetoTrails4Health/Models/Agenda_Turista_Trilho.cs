@@ -8,7 +8,7 @@ namespace ProjetoTrails4Health.Models
 {
     public class Agenda_Turista_Trilho
     {
-       
+        public int AgendaTuristaTrilhoId { get; set; }
         public Trilho Trilho { get; set; }
         [Required(ErrorMessage = "Por favor introduza o nome do Trilho")]
         [RegularExpression(@"[A-Za-z\s]+", ErrorMessage = "Nome Inválido")]
