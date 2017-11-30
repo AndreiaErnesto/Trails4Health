@@ -10,11 +10,11 @@ using ProjetoTrails4Health.Models;
 
 namespace ProjetoTrails4Health.Controllers
 {
-    public class TuristasController : Controller
+    public class TuristaController : Controller
     {
         private readonly AplicacaoDbContext _context;
 
-        public TuristasController(AplicacaoDbContext context)
+        public TuristaController(AplicacaoDbContext context)
         {
             _context = context;    
         }

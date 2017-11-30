@@ -15,12 +15,12 @@ namespace ProjetoTrails4Health.Data
         {
         }
 
-        //public DbSet<Trilho> Trilhos;
-        //public DbSet<Etapa> Etapas;
+       // public DbSet<Trilho> Trilhos;
+       // public DbSet<Etapa> Etapas;
         //public DbSet<Trilho_Etapa> Trilhos_Etapas;
 
-        //public DbSet<Turista> Turistas;
-        //public DbSet<Professor> Professores;
+       // public DbSet<Turista> Turistas;
+       // public DbSet<Professor> Professores;
         //public DbSet<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos;
         //public DbSet<Resposta_Questionario> Respostas_Questionario;
 
@@ -45,19 +45,17 @@ namespace ProjetoTrails4Health.Data
             //    .WithMany(e => e.Trilhos_Etapas)
             //    .HasForeignKey(te => te.EtapaId);
 
-            ////AGENDA _ TRILHO _ TURISTA
-            //modelBuilder.Entity<Agenda_Turista_Trilho>()
-            //    .HasKey(at => new { at.TrilhoId, at.TuristaId }); //chaves estrangeiras
+            //AGENDA _ TRILHO _ TURISTA
+           
+            modelBuilder.Entity<Agenda_Turista_Trilho>()
+                .HasOne(at => at.Trilho)
+              .WithMany(t => t.Agenda_Turistas_Trilhos)
+               .HasForeignKey(at => at.TrilhoId);
 
-            //modelBuilder.Entity<Agenda_Turista_Trilho>()
-            //    .HasOne(at => at.Trilho)
-            //    .WithMany(t => t.Agenda_Turistas_Trilhos)
-            //    .HasForeignKey(at => at.TrilhoId);
-
-            //modelBuilder.Entity<Agenda_Turista_Trilho>()
-            //    .HasOne(at => at.Turista)
-            //    .WithMany(tu => tu.Agenda_Turistas_Trilhos)
-            //    .HasForeignKey(at => at.TuristaId);
+            modelBuilder.Entity<Agenda_Turista_Trilho>()
+               .HasOne(at => at.Turista)
+                .WithMany(tu => tu.Agenda_Turistas_Trilhos)
+               .HasForeignKey(at => at.TuristaId);
 
             ////Resposta_Questionario
             //modelBuilder.Entity<Resposta_Questionario>()
@@ -82,9 +80,9 @@ namespace ProjetoTrails4Health.Data
         //public DbSet<Etapa> Etapas;
         //public DbSet<Trilho_Etapa> Trilhos_Etapas;
 
-        //public DbSet<Turista> Turistas;
-        //public DbSet<Professor> Professores;
-        //public DbSet<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos;
+        //public DbSet<Turista> Turista;
+        //public DbSet<Professor> Professor;
+        //public DbSet<Agenda_Turista_Trilho> Agenda_Turistas_Trilho;
         //public DbSet<Resposta_Questionario> Respostas_Questionario;
 
         //public DbSet<Dificuldade> Dificuldades;
@@ -93,15 +91,15 @@ namespace ProjetoTrails4Health.Data
         public DbSet<ProjetoTrails4Health.Models.Agenda_Turista_Trilho> Agenda_Turista_Trilho { get; set; }
 
         //public DbSet<Trilho> Trilhos;
-        //public DbSet<Etapa> Etapas;
-        //public DbSet<Trilho_Etapa> Trilhos_Etapas;
+       // public DbSet<Etapa> Etapas;
+       // public DbSet<Trilho_Etapa> Trilhos_Etapas;
 
         //public DbSet<Turista> Turistas;
-        //public DbSet<Professor> Professores;
-        //public DbSet<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos;
-        //public DbSet<Resposta_Questionario> Respostas_Questionario;
+       // public DbSet<Professor> Professores;
+       // public DbSet<Agenda_Turista_Trilho> Agenda_Turista_Trilhos;
+       // public DbSet<Resposta_Questionario> Respostas_Questionario;
 
-        //public DbSet<Dificuldade> Dificuldades;
+       // public DbSet<Dificuldade> Dificuldades;
 
 
         public DbSet<ProjetoTrails4Health.Models.Professor> Professor { get; set; }
@@ -132,7 +130,7 @@ namespace ProjetoTrails4Health.Data
         //public DbSet<Dificuldade> Dificuldades;
 
 
-        public DbSet<ProjetoTrails4Health.Models.Turista> Turista { get; set; }
+        public DbSet<ProjetoTrails4Health.Models.Turista> Turistas { get; set; }
 
     }
 }

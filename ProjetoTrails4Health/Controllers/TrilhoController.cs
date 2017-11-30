@@ -10,11 +10,11 @@ using ProjetoTrails4Health.Models;
 
 namespace ProjetoTrails4Health.Controllers
 {
-    public class TrilhosController : Controller
+    public class TrilhoController : Controller
     {
         private readonly AplicacaoDbContext _context;
 
-        public TrilhosController(AplicacaoDbContext context)
+        public TrilhoController(AplicacaoDbContext context)
         {
             _context = context;    
         }
