@@ -1,6 +1,8 @@
 ﻿namespace ProjetoTrails4Health.Models
 {
     public class Trilho_Etapa{
+        public int Trilho_EtapaId{ get; set; }
+
         public Trilho Trilho { get; set; }
         public int TrilhoId { get; set; }
 

@@ -29,7 +29,12 @@ namespace ProjetoTrails4Health.Data
                 PopulatedTrilhos(dbContext);
                 dbContext.SaveChanges();
             }
-            
+
+            if (!dbContext.Dificuldade.Any())
+            {
+                PopulatedDificuldades(dbContext);
+                dbContext.SaveChanges();
+            }
         }
 
         private static void PopulatedTuristas(AplicacaoDbContext dbContext)
@@ -44,7 +49,15 @@ namespace ProjetoTrails4Health.Data
             );
         }
 
-       
+        private static void PopulatedDificuldades(AplicacaoDbContext dbContext)
+        {
+            dbContext.Dificuldade.AddRange(
+                new Dificuldade { NomeDificuldade = "Difícil", Observacoes = "Percurso com muitas inclinações."},
+                new Dificuldade { NomeDificuldade = "Médio", Observacoes = "Percurso com algumas inclinações e poucos obstáculos." },
+                new Dificuldade { NomeDificuldade = "Fácil", Observacoes = "Percurso com poucos obstáculos." }
+                );
+        }
+
 
         private static void PopulatedProfessores(AplicacaoDbContext dbContext)
         {
@@ -59,12 +72,15 @@ namespace ProjetoTrails4Health.Data
             Professor professor1 = dbContext.Professor.SingleOrDefault(p => p.NIF == "236512378");
             Professor professor2 = dbContext.Professor.SingleOrDefault(p => p.NIF == "2541236987");
 
-            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Poço do Inferno", Local_Inicio_Trilho = "Ribeira de Leandres", Local_Fim_Trilho = "Poço do Inferno", Distancia_Total = "2,5 km", Duracao_Media = "3h45min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId });
+            Dificuldade dificuldade1 = dbContext.Dificuldade.SingleOrDefault(d => d.NomeDificuldade == "Difícil");
+            Dificuldade dificuldade2 = dbContext.Dificuldade.SingleOrDefault(d => d.NomeDificuldade == "Médio");
+            Dificuldade dificuldade3 = dbContext.Dificuldade.SingleOrDefault(d => d.NomeDificuldade == "Fácil");
 
-            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Torre", Local_Inicio_Trilho = "Vila de Manteigas", Local_Fim_Trilho = "Torre", Distancia_Total = "16 km", Duracao_Media = "14h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId});
-            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Covão de Santa Maria", Local_Inicio_Trilho = "Pousada de São Lourenço", Local_Fim_Trilho = "Covão de Santa Maria", Distancia_Total = "4 km", Duracao_Media = "4h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId });
-            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Corredor de Mouros", Local_Inicio_Trilho = "Covão da Ponte", Local_Fim_Trilho = "Corredor de Mouros", Distancia_Total = "8 km", Duracao_Media = "6h15min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId });
-            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId });
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Poço do Inferno", Local_Inicio_Trilho = "Ribeira de Leandres", Local_Fim_Trilho = "Poço do Inferno", Distancia_Total = "2,5 km", Duracao_Media = "3h45min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId, DificuldadeId = dificuldade2.DificuldadeId  });
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Torre", Local_Inicio_Trilho = "Vila de Manteigas", Local_Fim_Trilho = "Torre", Distancia_Total = "16 km", Duracao_Media = "14h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId, DificuldadeId = dificuldade1.DificuldadeId });
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Covão de Santa Maria", Local_Inicio_Trilho = "Pousada de São Lourenço", Local_Fim_Trilho = "Covão de Santa Maria", Distancia_Total = "4 km", Duracao_Media = "4h30min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId, DificuldadeId = dificuldade2.DificuldadeId });
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Corredor de Mouros", Local_Inicio_Trilho = "Covão da Ponte", Local_Fim_Trilho = "Corredor de Mouros", Distancia_Total = "8 km", Duracao_Media = "6h15min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor2.ProfessorId, DificuldadeId = dificuldade3.DificuldadeId });
+            dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId, DificuldadeId = dificuldade1.DificuldadeId });
          
         }
         private static void PopulatedAgenda_Turistas_Trilhos(AplicacaoDbContext dbContext)
