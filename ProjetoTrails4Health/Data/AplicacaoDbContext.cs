@@ -43,8 +43,8 @@ namespace ProjetoTrails4Health.Data
                 .HasForeignKey(te => te.EtapaId);
 
             //AGENDA _ TRILHO _ TURISTA
-            modelBuilder.Entity<Agenda_Turista_Trilho>()
-                .HasKey(at => new { at.TrilhoId, at.TuristaId }); //chaves estrangeiras
+           /* modelBuilder.Entity<Agenda_Turista_Trilho>()
+                .HasKey(at => new { at.TrilhoId, at.TuristaId }); */ //chaves estrangeiras
 
             modelBuilder.Entity<Agenda_Turista_Trilho>()
                 .HasOne(at => at.Trilho)
