@@ -9,9 +9,9 @@ namespace ProjetoTrails4Health.Models
 {
     public class Agenda_Turista_Trilho
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+       // [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Agenda_Turista_TrilhoId { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Trilho Trilho { get; set; }
         public int TrilhoId { get; set; }
         public int Tempo_Gasto { get; set; }
