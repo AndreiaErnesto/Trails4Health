@@ -92,7 +92,7 @@ namespace ProjetoTrails4Health
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             //ADICIONAR SEEDDATA
-            //SeedData.EnsurePopulated(app.ApplicationServices);
+            SeedData.EnsurePopulated(app.ApplicationServices);
         }
     }
 }
