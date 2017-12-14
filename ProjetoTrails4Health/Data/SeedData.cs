@@ -35,6 +35,12 @@ namespace ProjetoTrails4Health.Data
                 PopulatedTrilhos(dbContext);
                 dbContext.SaveChanges();
             }
+
+            if (!dbContext.Agenda_Turista_Trilho.Any())
+            {
+                PopulatedAgenda_Turistas_Trilhos(dbContext);
+                dbContext.SaveChanges();
+            }
         }
 
         private static void PopulatedTuristas(Trails4HealthDbContext dbContext)
