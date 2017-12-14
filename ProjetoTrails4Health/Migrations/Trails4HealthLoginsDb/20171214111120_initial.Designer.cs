@@ -11,7 +11,7 @@ using System;
 namespace ProjetoTrails4Health.Migrations.Trails4HealthLoginsDb
 {
     [DbContext(typeof(Trails4HealthLoginsDbContext))]
-    [Migration("20171214101141_initial")]
+    [Migration("20171214111120_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
