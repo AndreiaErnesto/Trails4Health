@@ -11,10 +11,10 @@ namespace ProjetoTrails4Health.Models
 
     public class EFTuristaRepository //: ITuristaRepository
     {
-        private AplicacaoDbContext dbContext; //contexto da Base de dados
+        private Trails4HealthDbContext dbContext; //contexto da Base de dados
 
         //Construtor do contexto da base de dados
-        public EFTuristaRepository(AplicacaoDbContext dbContext) //recebe como parametro a base de dados
+        public EFTuristaRepository(Trails4HealthDbContext dbContext) //recebe como parametro a base de dados
         {
             this.dbContext = dbContext;
         }

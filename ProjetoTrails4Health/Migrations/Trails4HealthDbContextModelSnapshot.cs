@@ -10,11 +10,10 @@ using System;
 
 namespace ProjetoTrails4Health.Migrations
 {
-    [DbContext(typeof(AplicacaoDbContext))]
-    [Migration("20171213104020_initial")]
-    partial class initial
+    [DbContext(typeof(Trails4HealthDbContext))]
+    partial class Trails4HealthDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

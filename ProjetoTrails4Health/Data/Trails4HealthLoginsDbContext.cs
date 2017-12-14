@@ -8,9 +8,9 @@ using ProjetoTrails4Health.Models;
 
 namespace ProjetoTrails4Health.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class Trails4HealthLoginsDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public Trails4HealthLoginsDbContext(DbContextOptions<Trails4HealthLoginsDbContext> options)
             : base(options)
         {
         }

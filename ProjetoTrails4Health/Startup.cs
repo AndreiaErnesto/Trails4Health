@@ -27,24 +27,28 @@ namespace ProjetoTrails4Health
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<Trails4HealthLoginsDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("ConectionStringLoginsTrails4Health")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<Trails4HealthLoginsDbContext>()
                 .AddDefaultTokenProviders();
 
 
             //Ficheiro .json Database=Books - criação de base de dados com este nome
             //Ficheiro .json MultipleActiveResultSets - vários utilizadores a aceder com diferentes querys
-            services.AddDbContext<AplicacaoDbContext>(options =>
-                 options.UseSqlServer(Configuration.GetConnectionString("ConectionStringsAplicacao"))
+            services.AddDbContext<Trails4HealthDbContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("ConectionStringTrails4Health"))
             );
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            //ADICIONAR SEEDDATA - comentar quando for necessário fazer migrações
+            var serviceProvider = services.BuildServiceProvider();
+            SeedData.EnsurePopulated(serviceProvider);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,8 +75,7 @@ namespace ProjetoTrails4Health
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            //ADICIONAR SEEDDATA
-            SeedData.EnsurePopulated(app.ApplicationServices);
+
         }
     }
 }

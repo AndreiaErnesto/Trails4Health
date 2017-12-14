@@ -12,9 +12,9 @@ namespace ProjetoTrails4Health.Controllers
 {
     public class Agenda_Turista_TrilhoController : Controller
     {
-        private readonly AplicacaoDbContext _context;
+        private readonly Trails4HealthDbContext _context;
 
-        public Agenda_Turista_TrilhoController(AplicacaoDbContext context)
+        public Agenda_Turista_TrilhoController(Trails4HealthDbContext context)
         {
             _context = context;    
         }

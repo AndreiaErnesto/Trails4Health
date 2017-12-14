@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace ProjetoTrails4Health.Data
 {
-    public class AplicacaoDbContext : DbContext
+    public class Trails4HealthDbContext : DbContext
     {
-        public AplicacaoDbContext(
-            DbContextOptions<AplicacaoDbContext> options) : base(options)
+        public Trails4HealthDbContext(
+            DbContextOptions<Trails4HealthDbContext> options) : base(options)
         {
         }
          

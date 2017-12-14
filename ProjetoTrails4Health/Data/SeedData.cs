@@ -10,7 +10,7 @@ namespace ProjetoTrails4Health.Data
     {        
         public static void EnsurePopulated(IServiceProvider serviceProvider) //Interface de provedor de serviços
         {
-            AplicacaoDbContext dbContext = (AplicacaoDbContext)serviceProvider.GetService(typeof(AplicacaoDbContext));
+            Trails4HealthDbContext dbContext = (Trails4HealthDbContext)serviceProvider.GetService(typeof(Trails4HealthDbContext));
 
             if (!dbContext.Turista.Any())
             {
@@ -24,20 +24,20 @@ namespace ProjetoTrails4Health.Data
                 dbContext.SaveChanges();
             }
 
-            if (!dbContext.Trilho.Any())
-            {
-                PopulatedTrilhos(dbContext);
-                dbContext.SaveChanges();
-            }
-
             if (!dbContext.Dificuldade.Any())
             {
                 PopulatedDificuldades(dbContext);
                 dbContext.SaveChanges();
             }
+
+            if (!dbContext.Trilho.Any())
+            {
+                PopulatedTrilhos(dbContext);
+                dbContext.SaveChanges();
+            }
         }
 
-        private static void PopulatedTuristas(AplicacaoDbContext dbContext)
+        private static void PopulatedTuristas(Trails4HealthDbContext dbContext)
         {
             dbContext.Turista.AddRange(
                 new Turista { Nome = "Pedro", Password = "PedroSanches21", Morada = "Rua Salgado n15", CodPostal = "2680-104", Email = "pedro@gmail.com", Telemovel = "914009711", DataNascimento = "22-11-1996", NIF = "987654321" },
@@ -49,7 +49,7 @@ namespace ProjetoTrails4Health.Data
             );
         }
 
-        private static void PopulatedDificuldades(AplicacaoDbContext dbContext)
+        private static void PopulatedDificuldades(Trails4HealthDbContext dbContext)
         {
             dbContext.Dificuldade.AddRange(
                 new Dificuldade { NomeDificuldade = "Difícil", Observacoes = "Percurso com muitas inclinações."},
@@ -59,7 +59,7 @@ namespace ProjetoTrails4Health.Data
         }
 
 
-        private static void PopulatedProfessores(AplicacaoDbContext dbContext)
+        private static void PopulatedProfessores(Trails4HealthDbContext dbContext)
         {
             dbContext.Professor.AddRange(
                 new Professor { Nome = "Matias", Password = "Matias21", Morada = "Rua Viriato n15", CodPostal = "1222-104", Email = "matias@gmail.com", Telemovel = "92456899", DataNascimento = "03-11-1996", NIF = "236512378" },
@@ -67,7 +67,7 @@ namespace ProjetoTrails4Health.Data
             );
         }
 
-        private static void PopulatedTrilhos(AplicacaoDbContext dbContext)
+        private static void PopulatedTrilhos(Trails4HealthDbContext dbContext)
         {
             Professor professor1 = dbContext.Professor.SingleOrDefault(p => p.NIF == "236512378");
             Professor professor2 = dbContext.Professor.SingleOrDefault(p => p.NIF == "2541236987");
@@ -83,7 +83,7 @@ namespace ProjetoTrails4Health.Data
             dbContext.Trilho.Add(new Trilho { Nome_Trilho = "Vale Glaciar do Zezere", Local_Inicio_Trilho = "Alminhas", Local_Fim_Trilho = "Vale Glaciar do Zêzere", Distancia_Total = "8 km", Duracao_Media = "5h02min", Esta_Ativo = "Sim", Tempo_Gasto = "", ProfessorId = professor1.ProfessorId, DificuldadeId = dificuldade1.DificuldadeId });
          
         }
-        private static void PopulatedAgenda_Turistas_Trilhos(AplicacaoDbContext dbContext)
+        private static void PopulatedAgenda_Turistas_Trilhos(Trails4HealthDbContext dbContext)
         {
             Turista turista1 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "987654321");
             Turista turista2 = dbContext.Turista.SingleOrDefault(tu => tu.NIF == "234567889");
