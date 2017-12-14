@@ -23,6 +23,8 @@ namespace ProjetoTrails4Health.Models
         [RegularExpression(@"(2\d{8})|(9[1236]\d{7})", ErrorMessage = "Telemóvel inválido")]
         public string Telemovel { get; set; }
         [Required(ErrorMessage = "Introduza a data de nascimento")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public string DataNascimento { get; set; }
         [Required(ErrorMessage = "Introduza o Nif")]
         public string NIF { get; set; }
