@@ -22,10 +22,10 @@ namespace ProjetoTrails4Health.Controllers
             _context = context;    
         }
 
-        public ViewResult List(int page = 1)
+        public ViewResult Index(int page = 1)
         {
             return View(
-                new TuristasListViewModel
+                new TuristaListViewModel
                 {
                     Turistas = repository.Turistas
                         .OrderBy(p => p.TuristaId)

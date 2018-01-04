@@ -1,4 +1,4 @@
-@model IEnumerable<ProjetoTrails4Health.Models.Turista>
+@model ProjetoTrails4Health.Models.ViewModels.TuristaListViewModel
 
 @{
     ViewData["Title"] = "Lista de Turistas";
@@ -9,44 +9,17 @@
 <p>
     <a asp-action="Create">Criar Novo</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Password)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Morada)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CodPostal)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Telemovel)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DataNascimento)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NIF)
-                </th>
-                
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            
-            
-            
-        </tr>
+
+
+@foreach (Turista p in Model.Turistas)
+{
+    @Html.Partial("TuristaSummary", new TuristaViewModel { Turista = t })
 }
-    </tbody>
-</table>
+
+<div page-model="@Model.PagingInfo"
+     css-classes-enabled="true"
+     css-class-page="btn btn-sm"
+     css-class-page-normal="btn-default"
+     css-class-page-selected="btn-primary"
+     class="pull-right">
+</div>
