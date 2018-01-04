@@ -1,0 +1,23 @@
+﻿@model TuristaViewModel
+
+<div class="well well-sm">
+    <table>
+        <tr>
+            <td>
+                <h3>
+                    <strong>@Model.Turista.Name</strong>
+                </h3>
+            </td>
+            <td>@Model.Turista.Morada</td>
+            <td>@Model.Turista.CodPostal</td>
+            <td>@Model.Turista.Telemovel</td>
+            <td>@Model.Turista.DataNascimento</td>
+            <td>@Model.Turista.NIF</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Model.Turista.TuristaId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@Model.Turista.TuristaId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@Model.Turista.TuristaId">Apagar</a>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -43,36 +43,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Morada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodPostal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telemovel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NIF)
-            </td>
             
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TuristaId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.TuristaId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.TuristaId">Apagar</a>
-            </td>
+            
+            
         </tr>
 }
     </tbody>
