@@ -11,8 +11,10 @@ namespace ProjetoTrails4Health.Models
 
         [Required(ErrorMessage = "Introduza o nome")]
         public string Nome { get; set; }
+
         [Required(ErrorMessage = "Introduza a password")]
         public string Password { get; set; }
+
         public string Morada { get; set; }
         //[Required(ErrorMessage = "Please enter the postal code")]
         [RegularExpression(@"\d\d\d\d(-\d\d\d)?", ErrorMessage = "Código postal inválido")]

@@ -7,7 +7,7 @@ namespace ProjetoTrails4Health.Models
 {
     interface ITuristaRepository
     {
-        IEnumerable<Turista> Turista { get; }
+        IEnumerable<Turista> Turistas { get; }
 
     }
 }

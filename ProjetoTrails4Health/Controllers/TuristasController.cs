@@ -7,16 +7,38 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjetoTrails4Health.Data;
 using ProjetoTrails4Health.Models;
+using ProjetoTrails4Health.Models.ViewModels;
 
 namespace ProjetoTrails4Health.Controllers
 {
     public class TuristasController : Controller
     {
+        private ITuristaRepository repository;
+        public int PageSize = 4;
         private readonly Trails4HealthDbContext _context;
 
-        public TuristasController(Trails4HealthDbContext context)
+        public TuristasController(Trails4HealthDbContext context )
         {
             _context = context;    
+        }
+
+        public ViewResult List(int page = 1)
+        {
+            return View(
+                new TuristasListViewModel
+                {
+                    Turistas = repository.Turistas
+                        .OrderBy(p => p.TuristaId)
+                        .Skip(PageSize * (page - 1))
+                        .Take(PageSize),
+                    PagingInfo = new PagingInfo
+                    {
+                        CurrentPage = page,
+                        ItemsPerPage = PageSize,
+                        TotalItems = repository.Turistas.Count()
+                    }
+                }
+            );
         }
 
         // GET: Turistas
