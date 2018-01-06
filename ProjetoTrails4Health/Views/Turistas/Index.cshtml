@@ -11,7 +11,7 @@
 </p>
 
 
-@foreach (Turista p in Model.Turistas)
+@foreach (Turista t in Model.Turistas)
 {
     @Html.Partial("TuristaSummary", new TuristaViewModel { Turista = t })
 }
