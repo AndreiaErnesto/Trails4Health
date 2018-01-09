@@ -54,11 +54,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Turista.TuristaId)
             </td>
-        
-               @Html.ActionLink("Edit", "Editar", new { /* id=item.PrimaryKey */ }) |
-               @Html.ActionLink("Details", "Detalhes", new { /* id=item.PrimaryKey */ }) |
-               @Html.ActionLink("Delete", "Eliminar", new { /* id=item.PrimaryKey */ })
-        
+            <td>
+                @Html.ActionLink("Edit", "Editar", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Detalhes", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Eliminar", new { /* id=item.PrimaryKey */ })
+
+
+            </td>
+              
            
             <!-- <td>
                 <a asp-action="Edit" asp-route-id="@item.TuristaId">Alterar</a> |
