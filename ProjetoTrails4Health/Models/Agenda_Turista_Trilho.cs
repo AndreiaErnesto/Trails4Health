@@ -22,6 +22,7 @@ namespace ProjetoTrails4Health.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Data_Reserva { get; set; }
+
         [Required(ErrorMessage = "Por favor introduza uma data prevista da reserva")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]

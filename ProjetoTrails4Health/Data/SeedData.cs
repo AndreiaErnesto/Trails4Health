@@ -112,7 +112,7 @@ namespace ProjetoTrails4Health.Data
 
             dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId, Data_Reserva = new DateTime(2017, 11, 15), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 16), Tempo_Gasto = 00, Estado_Agendamento = "Cancelado", Data_Estado_Agendamento = new DateTime(2017, 12, 15) });
 
-
+            
 
 
         }
