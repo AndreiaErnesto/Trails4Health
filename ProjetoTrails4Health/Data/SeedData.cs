@@ -104,16 +104,17 @@ namespace ProjetoTrails4Health.Data
             Trilho trilho4 = dbContext.Trilho.SingleOrDefault(t => t.Nome_Trilho == "Corredor de Mouros");
             Trilho trilho5 = dbContext.Trilho.SingleOrDefault(t => t.Nome_Trilho == "Vale Glaciar do Zezere");
 
-            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista1.TuristaId, TrilhoId = trilho1.TrilhoId, Data_Reserva = new DateTime(2017,11,11), Data_Prevista_Inicio_Trilho = new DateTime(2017,1,26), Tempo_Gasto = 00, Estado_Agendamento = "Agendado", Data_Estado_Agendamento = new DateTime(2017,11, 24) });
-            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista1.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017,10,03), Data_Prevista_Inicio_Trilho = new DateTime(2017,11,30), Tempo_Gasto = 00, Estado_Agendamento = "Agendado", Data_Estado_Agendamento = new DateTime(2017,11,27) });
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho1.TrilhoId, Data_Reserva = new DateTime(2017, 11, 11), Data_Prevista_Inicio_Trilho = new DateTime(2017, 1, 26), Tempo_Gasto = 00, Estado_Agendamento = "Agendado", Data_Estado_Agendamento = new DateTime(2017, 11, 24) });
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista4.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017, 10, 03), Data_Prevista_Inicio_Trilho = new DateTime(2017, 11, 30), Tempo_Gasto = 00, Estado_Agendamento = "Agendado", Data_Estado_Agendamento = new DateTime(2017, 11, 27) });
 
-            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho2.TrilhoId, Data_Reserva = new DateTime(2017,07,03), Data_Prevista_Inicio_Trilho = new DateTime(2017,10,15), Tempo_Gasto = 50, Estado_Agendamento = "Realizado", Data_Estado_Agendamento = new DateTime(201,12,02) });
-            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017,11,10), Data_Prevista_Inicio_Trilho = new DateTime(2017,11,18), Tempo_Gasto = 00, Estado_Agendamento = "Não Realizado", Data_Estado_Agendamento = new DateTime(2017,11,27) });
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho2.TrilhoId, Data_Reserva = new DateTime(2017, 07, 03), Data_Prevista_Inicio_Trilho = new DateTime(2017, 10, 15), Tempo_Gasto = 50, Estado_Agendamento = "Realizado", Data_Estado_Agendamento = new DateTime(2017, 12, 02) });
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista2.TuristaId, TrilhoId = trilho5.TrilhoId, Data_Reserva = new DateTime(2017, 11, 10), Data_Prevista_Inicio_Trilho = new DateTime(2017, 11, 18), Tempo_Gasto = 00, Estado_Agendamento = "Não Realizado", Data_Estado_Agendamento = new DateTime(2017, 11, 27) });
 
-            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId, Data_Reserva = new DateTime(2017,11,15), Data_Prevista_Inicio_Trilho = new DateTime(2017,12,16), Tempo_Gasto = 00, Estado_Agendamento = "Cancelado", Data_Estado_Agendamento = new DateTime(2017,12,15) });
-            
+            dbContext.Agenda_Turista_Trilho.Add(new Agenda_Turista_Trilho { TuristaId = turista3.TuristaId, TrilhoId = trilho3.TrilhoId, Data_Reserva = new DateTime(2017, 11, 15), Data_Prevista_Inicio_Trilho = new DateTime(2017, 12, 16), Tempo_Gasto = 00, Estado_Agendamento = "Cancelado", Data_Estado_Agendamento = new DateTime(2017, 12, 15) });
 
-           
+
+
+
         }
     }
 }
