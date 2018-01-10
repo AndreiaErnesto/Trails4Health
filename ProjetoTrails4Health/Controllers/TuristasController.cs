@@ -13,39 +13,39 @@ namespace ProjetoTrails4Health.Controllers
 {
     public class TuristasController : Controller
     {
-        private ITuristaRepository repository;
         public int PageSize = 4;
         private readonly Trails4HealthDbContext _context;
 
-        public TuristasController(Trails4HealthDbContext context )
+        public TuristasController(Trails4HealthDbContext context)
         {
             _context = context;    
         }
 
+
         public ViewResult Index(int page = 1)
         {
+            
+
+
             return View(
                 new TuristaListViewModel
                 {
-                    Turistas = repository.Turistas
+                    Turistas = _context.Turista
                         .OrderBy(p => p.TuristaId)
                         .Skip(PageSize * (page - 1))
-                        .Take(PageSize),
-                    PagingInfo = new PagingInfo
+                        .Take(PageSize).ToListAsync().Result,
+
+            
+            PagingInfo = new PagingInfo
                     {
                         CurrentPage = page,
                         ItemsPerPage = PageSize,
-                        TotalItems = repository.Turistas.Count()
+                        TotalItems = _context.Turista.Count()
                     }
                 }
             );
         }
 
-        // GET: Turistas
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Turista.ToListAsync());
-        }
 
         // GET: Turistas/Details/5
         public async Task<IActionResult> Details(int? id)

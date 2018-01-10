@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoTrails4Health.Models
 {
-    interface ITuristaRepository
+    public interface ITuristaRepository
     {
         IEnumerable<Turista> Turistas { get; }
 
