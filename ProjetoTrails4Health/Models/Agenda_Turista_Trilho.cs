@@ -20,17 +20,17 @@ namespace ProjetoTrails4Health.Models
         public int TuristaId { get; set; }
         [Required(ErrorMessage = "Por favor introduza uma data da reserva")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime Data_Reserva { get; set; }
 
         [Required(ErrorMessage = "Por favor introduza uma data prevista da reserva")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime Data_Prevista_Inicio_Trilho { get; set; }
         public string  Estado_Agendamento { get; set; }
         [Required(ErrorMessage = "Por favor introduza o estado do Agendamento do Trilho")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
          public DateTime Data_Estado_Agendamento { get; set; }
     }
 }

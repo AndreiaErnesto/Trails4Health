@@ -50,7 +50,7 @@ namespace ProjetoTrails4Health.Controllers
         public IActionResult Create()
         {
             ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "TrilhoId");
-            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "TuristaId");
+            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "Nome");
             return View();
         }
 
