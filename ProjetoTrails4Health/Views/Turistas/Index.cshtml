@@ -5,21 +5,33 @@
 }
 
 <h2>Lista de Turistas</h2>
-
 <p>
     <a asp-action="Create">Criar Novo</a>
 </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Morada</th>
+                <th>Codigo Postal</th>
+                <th>Telemovel</th>
+                <th>Data Nascimento</th>
+                <th>Nif</th>
+            </tr>
+        </thead>
 
+        <tbody>
+            @foreach (Turista t in Model.Turistas){ 
+                @Html.Partial("TuristaSummary", new TuristaViewModel { Turista = t })
+             }
+        </tbody>
+    </table>
 
-@foreach (Turista t in Model.Turistas)
-{
-    @Html.Partial("TuristaSummary", new TuristaViewModel { Turista = t })
-}
-
-<div page-model="@Model.PagingInfo"
-     css-classes-enabled="true"
-     css-class-page="btn btn-sm"
-     css-class-page-normal="btn-default"
-     css-class-page-selected="btn-primary"
-     class="pull-right">
-</div>
+    <div page-model="@Model.PagingInfo"
+         css-classes-enabled="true"
+         css-class-page="btn btn-sm"
+         css-class-page-normal="btn-default"
+         css-class-page-selected="btn-primary"
+         class="pull-right"
+         page-action="Index">
+    </div>

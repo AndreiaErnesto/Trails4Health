@@ -24,9 +24,6 @@ namespace ProjetoTrails4Health.Controllers
 
         public ViewResult Index(int page = 1)
         {
-            
-
-
             return View(
                 new TuristaListViewModel
                 {
@@ -34,8 +31,7 @@ namespace ProjetoTrails4Health.Controllers
                         .OrderBy(p => p.TuristaId)
                         .Skip(PageSize * (page - 1))
                         .Take(PageSize).ToListAsync().Result,
-
-            
+                    
             PagingInfo = new PagingInfo
                     {
                         CurrentPage = page,
