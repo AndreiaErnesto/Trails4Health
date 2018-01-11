@@ -37,6 +37,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Trilho.TrilhoId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Data_Reserva)
             </td>
             <td>
@@ -48,9 +51,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Data_Estado_Agendamento)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Trilho.TrilhoId)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Turista.TuristaId)
             </td>

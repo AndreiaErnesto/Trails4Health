@@ -11,7 +11,82 @@
         <h4>Agenda</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <p class="gallery">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Nome_Trilho
+                    </th>
+                    <th>
+                     Local_Inicio_Trilho
+                    </th>
+                    <th>
+                       Local_Fim_Trilho
+                    </th>
+                    <th>
+                     Distancia_Total
+                    </th>
+                    <th>
+                        Duracao_Media
+                    </th>
+                    <th>
+                     Esta_Ativo
+                    </th>
+                    <th>
+                       Tempo_Gasto
+                    </th>
+                    <th>
+                        Dificuldade
+                    </th>
+                    <th>
+                       Professor
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewData)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor( => item.Nome_Trilho)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Local_Inicio_Trilho)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Local_Fim_Trilho)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Distancia_Total)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Duracao_Media)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Esta_Ativo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tempo_Gasto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dificuldade.DificuldadeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Professor.ProfessorId)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.TrilhoId">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.TrilhoId">Detalhes</a> |
+                            <a asp-action="Delete" asp-route-id="@item.TrilhoId">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+       
+
+        <!--<p class="gallery">
             <img src="~/images/banner22.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
             <p> Trilho 1</p>
             <img src="~/images/banner33.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
@@ -20,8 +95,15 @@
             <p> Trilho 3</p>
             <img src="~/images/banner11.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
             <p> Trilho 4</p>
+             </div> 
+        -->
         
-        </div> 
+         <!--<div class="form-group">
+            <label asp-for="Trilho" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="TrilhoId" class ="form-control" asp-items="ViewBag.TrilhoId"></select>
+            </div>
+        </div>-->
         <div class="form-group">
             <label asp-for="Turista" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -57,6 +139,12 @@
                 <span asp-validation-for="Data_Estado_Agendamento" class="text-danger"></span>
             </div>
         </div>--> 
+        <td>
+            <a asp-action="Edit" asp-route-id="@Model.Trilho.TrilhoId">Editar</a> |
+            <a asp-action="Details" asp-route-id="@Model.Turista.TuristaId">Detalhes</a> |
+            <a asp-action="Delete" asp-route-id="@Model.Turista.TuristaId">Apagar</a>
+        </td>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Criar" class="btn btn-default" />

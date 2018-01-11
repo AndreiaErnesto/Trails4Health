@@ -22,7 +22,7 @@ namespace ProjetoTrails4Health.Controllers
         // GET: Agenda_Turista_Trilho
         public async Task<IActionResult> Index()
         {
-            var aplicacaoDbContext = _context.Agenda_Turista_Trilho.Include(a => a.Trilho).Include(a => a.Turista);
+            var aplicacaoDbContext = _context.Agenda_Turista_Trilho.Include(a => a.Trilho);
             return View(await aplicacaoDbContext.ToListAsync());
         }
 
@@ -49,7 +49,9 @@ namespace ProjetoTrails4Health.Controllers
         // GET: Agenda_Turista_Trilho/Create
         public IActionResult Create()
         {
-            ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "TrilhoId");
+            var trilhos = _context.Trilho.ToList();
+            ViewData["Trilhos"] = trilhos;
+            ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "Nome");
             ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "Nome");
             return View();
         }
