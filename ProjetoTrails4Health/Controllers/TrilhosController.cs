@@ -12,12 +12,15 @@ namespace ProjetoTrails4Health.Controllers
 {
     public class TrilhosController : Controller
     {
+        
         private readonly Trails4HealthDbContext _context;
 
         public TrilhosController(Trails4HealthDbContext context)
         {
             _context = context;    
         }
+
+        
 
         // GET: Trilhoes
         public async Task<IActionResult> Index()

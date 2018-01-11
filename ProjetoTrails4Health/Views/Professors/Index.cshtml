@@ -1,89 +1,41 @@
-@model IEnumerable<ProjetoTrails4Health.Models.Professor>
+ï»¿@model ProfessorListViewModel
 
 @{
-    ViewData["Title"] = "Lista de professores";
+    ViewData["Title"] = "Lista de Professores";
 }
 
-<h2>Lista de professores</h2>
-
+<h2>Lista de Professores</h2>
 <p>
-    <a asp-action="Create">Criar novo</a>
+    <a asp-action="Create">Criar Novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Password)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Morada)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CodPostal)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Telemovel)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DataNascimento)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NIF)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Funcao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.N_Gabinete)
-                </th>
-            <th></th>
+            <th>Nome</th>
+            <th>Morada</th>
+            <th>Codigo Postal</th>
+            <th>Email</th>
+            <th>Telemovel</th>
+            <th>Data Nascimento</th>
+            <th>Nif</th>
+            <th>Função</th>
+            <th>Nº Gabinete</th>
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Morada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodPostal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telemovel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NIF)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Funcao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.N_Gabinete)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProfessorId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ProfessorId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProfessorId">Eliminar</a>
-            </td>
-        </tr>
-}
+        @foreach (Professor p in Model.Professores)
+        {
+            @Html.Partial("ProfessorSummary", new ProfessorViewModel { Professor = p })
+        }
     </tbody>
 </table>
+
+<div page-model="@Model.PagingInfo"
+     css-classes-enabled="true"
+     css-class-page="btn btn-sm"
+     css-class-page-normal="btn-default"
+     css-class-page-selected="btn-primary"
+     class="pull-right"
+     page-action="Index">
+</div>

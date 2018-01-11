@@ -8,10 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoTrails4Health.Data;
 using ProjetoTrails4Health.Models;
 
+using ProjetoTrails4Health.Models.ViewModels;
+
 namespace ProjetoTrails4Health.Controllers
 {
     public class ProfessorsController : Controller
     {
+        public int PageSize = 4;
         private readonly Trails4HealthDbContext _context;
 
         public ProfessorsController(Trails4HealthDbContext context)
@@ -19,11 +22,26 @@ namespace ProjetoTrails4Health.Controllers
             _context = context;    
         }
 
-        // GET: Professors
-        public async Task<IActionResult> Index()
+        public ViewResult Index(int page = 1)
         {
-            return View(await _context.Professor.ToListAsync());
+            return View(
+                new ProfessorListViewModel
+                {
+                    Professores = _context.Professor
+                        .OrderBy(p => p.ProfessorId)
+                        .Skip(PageSize * (page - 1))
+                        .Take(PageSize).ToListAsync().Result,
+
+                    PagingInfo = new PagingInfo
+                    {
+                        CurrentPage = page,
+                        ItemsPerPage = PageSize,
+                        TotalItems = _context.Professor.Count()
+                    }
+                }
+            );
         }
+
 
         // GET: Professors/Details/5
         public async Task<IActionResult> Details(int? id)

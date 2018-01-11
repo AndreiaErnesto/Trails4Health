@@ -1,0 +1,18 @@
+﻿@model ProjetoTrails4Health.Models.ViewModels.ProfessorViewModel
+
+<tr class="well well-sm">
+    <td><strong>@Model.Professor.Nome</strong></td>
+    <td>@Model.Professor.Morada</td>
+    <td>@Model.Professor.CodPostal</td>
+    <td>@Model.Professor.Email</td>
+    <td>@Model.Professor.Telemovel</td>
+    <td>@Model.Professor.DataNascimento</td>
+    <td>@Model.Professor.NIF</td>
+    <td>@Model.Professor.Funcao</td>
+    <td>@Model.Professor.N_Gabinete</td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@Model.Professor.ProfessorId">Editar</a> |
+        <a asp-action="Details" asp-route-id="@Model.Professor.ProfessorId">Detalhes</a> |
+        <a asp-action="Delete" asp-route-id="@Model.Professor.ProfessorId">Apagar</a>
+    </td>
+</tr>
