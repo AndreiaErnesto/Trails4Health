@@ -268,7 +268,7 @@ namespace ProjetoTrails4Health.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register([Bind("Email, TuristaId, Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista, RegisterViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Register([Bind("Email, Password, ConfirmPassword, TuristaId, Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista, RegisterViewModel model, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {

@@ -34,6 +34,20 @@ namespace ProjetoTrails4Health
                 .AddEntityFrameworkStores<Trails4HealthLoginsDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                // Add other passsword settings if needed ...
+
+                // Lockout settings
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                // Add other lockout settings if needed ...
+
+                // Add other user settings if needed ...
+                //options.User.RequireUniqueEmail = true;
+            });
 
             //Ficheiro .json Database=Books - criação de base de dados com este nome
             //Ficheiro .json MultipleActiveResultSets - vários utilizadores a aceder com diferentes querys
