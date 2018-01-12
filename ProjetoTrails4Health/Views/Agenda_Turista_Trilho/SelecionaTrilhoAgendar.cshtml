@@ -1,0 +1,78 @@
+﻿@model  IEnumerable<ProjetoTrails4Health.Models.Trilho>
+@{
+    ViewData["Title"] = "SelecionaTrilhoAgendar";
+}
+
+<h2>SelecionaTrilhoAgendar</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome_Trilho
+            </th>
+            <th>
+                Local_Inicio_Trilho
+            </th>
+            <th>
+                Local_Fim_Trilho
+            </th>
+            <th>
+                Distancia_Total
+            </th>
+            <th>
+                Duracao_Media
+            </th>
+            <th>
+                Esta_Ativo
+            </th>
+            <th>
+                Tempo_Gasto
+            </th>
+            <th>
+                Dificuldade
+            </th>
+            <th>
+                Professor
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome_Trilho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Local_Inicio_Trilho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Local_Fim_Trilho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distancia_Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duracao_Media)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Esta_Ativo)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dificuldade.NomeDificuldade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Professor.Nome)
+                </td>
+                <td>
+                    
+                    <a asp-action="AgendarTrilho" asp-route-id="@item.TrilhoId">SelecionarTrilhoAgendar </a> 
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

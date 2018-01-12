@@ -51,24 +51,31 @@ namespace ProjetoTrails4Health.Controllers
             return View(agenda_Turista_Trilho);
         }
 
-        // GET: Agenda_Turista_Trilho/Create
+        // GET: Agenda_Turista_Trilho/AgendarTrilho
         [Authorize(Roles = "Professor,Turista")]
-        public IActionResult Create()
+        public IActionResult AgendarTrilho (int ? id)
         {
-            var trilhos = _context.Trilho.ToList();
-            ViewData["Trilhos"] = trilhos;
-            ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "Nome");
-            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "Nome");
-            return View();
+            var agendamento = new Agenda_Turista_Trilho();
+            agendamento.Trilho = _context.Trilho.SingleOrDefault(t => t.TrilhoId == id);
+            //ViewData["Trilhos"] = trilhos;
+            //ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "Nome");
+            //ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "Nome");
+            return View(agendamento);
         }
 
-        // POST: Agenda_Turista_Trilho/Create
+        public IActionResult SelecionaTrilhoAgendar()
+        {
+            var trilhos = _context.Trilho.ToList();
+            return View(trilhos);
+        }
+
+        // POST: Agenda_Turista_Trilho/AgendarTrilho
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Professor,Turista")]
-        public async Task<IActionResult> Create([Bind("Agenda_Turista_TrilhoId,TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
+        public async Task<IActionResult> Create([Bind("TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
             if (ModelState.IsValid)
             {
