@@ -26,6 +26,7 @@ namespace ProjetoTrails4Health.Models
         public string DataNascimento { get; set; }
         [Required(ErrorMessage = "Introduza o Nif")]
         public string NIF { get; set; }
+        public String TipoUtilizador { get; set; }
 
         public ICollection<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos { get; set; }  //Relacionamentos
         public ICollection<Resposta_Questionario> Respostas_Questionario { get; set; }
