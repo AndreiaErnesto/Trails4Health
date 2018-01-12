@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ namespace ProjetoTrails4Health.Controllers
             _context = context;    
         }
 
-
+        [Authorize(Roles = "Professor")]
         public ViewResult Index(int page = 1)
         {
             return View(
@@ -44,6 +45,7 @@ namespace ProjetoTrails4Health.Controllers
 
 
         // GET: Turistas/Details/5
+        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -72,6 +74,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor, Turista")]
         public async Task<IActionResult> Create([Bind("TuristaId,Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
         {
             if (ModelState.IsValid)
@@ -134,6 +137,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Turistas/Edit/5
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -154,6 +158,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Edit(int id, [Bind("TuristaId,Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
         {
             if (id != turista.TuristaId)
@@ -185,6 +190,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Turistas/Delete/5
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -205,6 +211,7 @@ namespace ProjetoTrails4Health.Controllers
         // POST: Turistas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var turista = await _context.Turista.SingleOrDefaultAsync(m => m.TuristaId == id);

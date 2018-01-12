@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ using ProjetoTrails4Health.Data;
 using ProjetoTrails4Health.Models;
 
 namespace ProjetoTrails4Health.Controllers
-{
+{ 
     public class TrilhosController : Controller
     {
         
@@ -30,6 +31,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Trilhoes/Details/5
+        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -50,6 +52,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Trilhoes/Create
+        [Authorize(Roles = "Professor")]
         public IActionResult Create()
         {
             ViewData["DificuldadeId"] = new SelectList(_context.Set<Dificuldade>(), "DificuldadeId", "DificuldadeId");
@@ -76,6 +79,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Trilhoes/Edit/5
+        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -98,6 +102,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> Edit(int id, [Bind("TrilhoId,Nome_Trilho,Local_Inicio_Trilho,Local_Fim_Trilho,Distancia_Total,Duracao_Media,Esta_Ativo,Tempo_Gasto,ProfessorId,DificuldadeId")] Trilho trilho)
         {
             if (id != trilho.TrilhoId)
@@ -131,6 +136,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Trilhoes/Delete/5
+        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -153,6 +159,7 @@ namespace ProjetoTrails4Health.Controllers
         // POST: Trilhoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var trilho = await _context.Trilho.SingleOrDefaultAsync(m => m.TrilhoId == id);

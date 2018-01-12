@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,8 +11,10 @@ using ProjetoTrails4Health.Models;
 
 namespace ProjetoTrails4Health.Controllers
 {
+    
     public class Agenda_Turista_TrilhoController : Controller
     {
+        
         private readonly Trails4HealthDbContext _context;
 
         public Agenda_Turista_TrilhoController(Trails4HealthDbContext context)
@@ -20,6 +23,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Agenda_Turista_Trilho
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Index()
         {
             var aplicacaoDbContext = _context.Agenda_Turista_Trilho.Include(a => a.Trilho);
@@ -27,6 +31,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Agenda_Turista_Trilho/Details/5
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,6 +52,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Agenda_Turista_Trilho/Create
+        [Authorize(Roles = "Professor,Turista")]
         public IActionResult Create()
         {
             var trilhos = _context.Trilho.ToList();
@@ -61,6 +67,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Create([Bind("Agenda_Turista_TrilhoId,TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
             if (ModelState.IsValid)
@@ -75,6 +82,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Agenda_Turista_Trilho/Edit/5
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,6 +105,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Edit(int id, [Bind("Agenda_Turista_TrilhoId,TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
             if (id != agenda_Turista_Trilho.Agenda_Turista_TrilhoId)
@@ -130,6 +139,7 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Agenda_Turista_Trilho/Delete/5
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -152,6 +162,7 @@ namespace ProjetoTrails4Health.Controllers
         // POST: Agenda_Turista_Trilho/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var agenda_Turista_Trilho = await _context.Agenda_Turista_Trilho.SingleOrDefaultAsync(m => m.Agenda_Turista_TrilhoId == id);

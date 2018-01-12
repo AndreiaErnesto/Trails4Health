@@ -10,7 +10,7 @@ namespace ProjetoTrails4Health.Models.AccountViewModels
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "Nome")]
         public string Email { get; set; }
 
         [Required]
@@ -20,8 +20,8 @@ namespace ProjetoTrails4Health.Models.AccountViewModels
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirma password")]
+        [Compare("Password", ErrorMessage = "A password e a sua confirmação não são iguais.")]
         public string ConfirmPassword { get; set; }
     }
 }
