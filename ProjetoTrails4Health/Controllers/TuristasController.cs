@@ -74,7 +74,7 @@ namespace ProjetoTrails4Health.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Professor, Turista")]
+        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> Create([Bind("TuristaId,Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
         {
             if (ModelState.IsValid)
