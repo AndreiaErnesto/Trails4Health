@@ -201,9 +201,6 @@ namespace ProjetoTrails4Health.Migrations
                     b.Property<string>("Nome")
                         .IsRequired();
 
-                    b.Property<string>("Password")
-                        .IsRequired();
-
                     b.Property<string>("Telemovel");
 
                     b.HasKey("TuristaId");

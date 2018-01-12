@@ -11,7 +11,7 @@ using System;
 namespace ProjetoTrails4Health.Migrations
 {
     [DbContext(typeof(Trails4HealthDbContext))]
-    [Migration("20180110094916_Initial")]
+    [Migration("20180112120322_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -200,9 +200,6 @@ namespace ProjetoTrails4Health.Migrations
                         .IsRequired();
 
                     b.Property<string>("Nome")
-                        .IsRequired();
-
-                    b.Property<string>("Password")
                         .IsRequired();
 
                     b.Property<string>("Telemovel");

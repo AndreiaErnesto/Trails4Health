@@ -72,7 +72,6 @@ namespace ProjetoTrails4Health.Migrations
                     Morada = table.Column<string>(nullable: true),
                     NIF = table.Column<string>(nullable: false),
                     Nome = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false),
                     Telemovel = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
