@@ -69,72 +69,7 @@ namespace ProjetoTrails4Health.Controllers
             return View();
         }
 
-        // POST: Turistas/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Professor")]
-        public async Task<IActionResult> Create([Bind("TuristaId,Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
-        {
-            if (ModelState.IsValid)
-            {
-
-                if (IsValidContrib(turista.NIF) == false)
-                {
-                    ModelState.AddModelError("NIF", "O Nif está incorreto.");
-                    return View();
-                }
-                else
-                {
-                    _context.Add(turista);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction("Index");
-                }
-            }
-            return View(turista);
-        }
-
-        public bool IsValidContrib(string Contrib)
-        {
-            bool functionReturnValue = false;
-            functionReturnValue = false;
-            string[] s = new string[9];
-            string Ss = null;
-            string C = null;
-            int i = 0;
-            long checkDigit = 0;
-
-            s[0] = Convert.ToString(Contrib[0]);
-            s[1] = Convert.ToString(Contrib[1]);
-            s[2] = Convert.ToString(Contrib[2]);
-            s[3] = Convert.ToString(Contrib[3]);
-            s[4] = Convert.ToString(Contrib[4]);
-            s[5] = Convert.ToString(Contrib[5]);
-            s[6] = Convert.ToString(Contrib[6]);
-            s[7] = Convert.ToString(Contrib[7]);
-            s[8] = Convert.ToString(Contrib[8]);
-
-            if (Contrib.Length == 9)
-            {
-                C = s[0];
-                if (s[0] == "1" || s[0] == "2" || s[0] == "5" || s[0] == "6" || s[0] == "9")
-                {
-                    checkDigit = Convert.ToInt32(C) * 9;
-                    for (i = 2; i <= 8; i++)
-                    {
-                        checkDigit = checkDigit + (Convert.ToInt32(s[i - 1]) * (10 - i));
-                    }
-                    checkDigit = 11 - (checkDigit % 11);
-                    if ((checkDigit >= 10))
-                        checkDigit = 0;
-                    Ss = s[0] + s[1] + s[2] + s[3] + s[4] + s[5] + s[6] + s[7] + s[8];
-                    if ((checkDigit == Convert.ToInt32(s[8])))
-                        functionReturnValue = true;
-                }
-            }
-            return functionReturnValue;
-        }
+      
 
         // GET: Turistas/Edit/5
         [Authorize(Roles = "Professor,Turista")]
