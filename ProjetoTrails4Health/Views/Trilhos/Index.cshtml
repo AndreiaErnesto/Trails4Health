@@ -30,9 +30,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Esta_Ativo)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Tempo_Gasto)
-                </th>
+               
             <th>
                 @Html.DisplayNameFor(model => model.Dificuldade)
             </th>
@@ -63,14 +61,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Esta_Ativo)
             </td>
+
             <td>
-                @Html.DisplayFor(modelItem => item.Tempo_Gasto)
+                @Html.DisplayFor(modelItem => item.Dificuldade.NomeDificuldade)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Dificuldade.DificuldadeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Professor.ProfessorId)
+                @Html.DisplayFor(modelItem => item.Professor.Nome)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TrilhoId">Editar</a> |

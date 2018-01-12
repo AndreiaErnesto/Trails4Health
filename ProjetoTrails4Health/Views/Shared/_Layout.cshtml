@@ -36,20 +36,23 @@
 
                     <li><a asp-area="" asp-controller="Trilhos" asp-action="Index">Trilhos</a></li>
 
-                    @if (User.IsInRole("Professor")) {
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilizadores <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Turistas" asp-action="Index">Turistas</a></li>
-                                <li><a asp-area="" asp-controller="Professors" asp-action="Index">Professores</a></li>
-                            </ul>
-                        </li>
-                    }
-                    @if (User.IsInRole("Professor, Turista")) {
-                        <li><a asp-area="" asp-controller="Agenda_Turista_Trilho" asp-action="Index">Agenda</a></li>
-                    }
-                <li><a asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre nós</a></li>
+                    @if (User.IsInRole("Professor"))
+    {
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilizadores <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a asp-area="" asp-controller="Turistas" asp-action="Index">Turistas</a></li>
+                        <li><a asp-area="" asp-controller="Professors" asp-action="Index">Professores</a></li>
+                    </ul>
+                </li>
+}
+
+
+                <li>@if (User.IsInRole("Professor,Turista"))
+{<a asp-area="" asp-controller="Agenda_Turista_Trilho" asp-action="Index">Agenda</a>}</li>
+                     
+                    <li><a asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Sobre nós</a></li>
                 </ul>
 
                 @await Html.PartialAsync("_LoginPartial")

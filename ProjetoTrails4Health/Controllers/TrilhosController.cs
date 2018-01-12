@@ -31,7 +31,6 @@ namespace ProjetoTrails4Health.Controllers
         }
 
         // GET: Trilhoes/Details/5
-        [Authorize(Roles = "Professor")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoTrails4Health.Data
 {
-    public class UsersSeedData
+    public class UtilizadoresSeedData
     {
         public static async Task EnsurePopulatedAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {

@@ -29,6 +29,7 @@ namespace ProjetoTrails4Health.Controllers
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ILogger<AccountController> logger,
@@ -39,6 +40,9 @@ namespace ProjetoTrails4Health.Controllers
             _emailSender = emailSender;
             _logger = logger;
             _context = context;
+
+            UtilizadoresSeedData.EnsurePopulatedAsync(userManager, roleManager).Wait();
+
         }
 
         [TempData]
@@ -257,7 +261,7 @@ namespace ProjetoTrails4Health.Controllers
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
 
-                    _context.Add(Turista);
+                    _context.Add(turista);
                     await _context.SaveChangesAsync();
 
                     return RedirectToLocal(returnUrl);
