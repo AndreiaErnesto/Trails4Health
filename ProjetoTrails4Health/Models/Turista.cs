@@ -17,6 +17,11 @@ namespace ProjetoTrails4Health.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirma password")]
+        [Compare("Password", ErrorMessage = "A password e a sua confirmação não são iguais.")]
+        public string ConfirmPassword { get; set; }
+
         public string Morada { get; set; }
         
         //[Required(ErrorMessage = "Please enter the postal code")]
@@ -41,7 +46,6 @@ namespace ProjetoTrails4Health.Models
         [Required(ErrorMessage = "Introduza o Nif")]
         [Display(Name = "Contribuinte")]
         public string NIF { get; set; }
-        public String TipoUtilizador { get; set; }
 
         public ICollection<Agenda_Turista_Trilho> Agenda_Turistas_Trilhos { get; set; }  //Relacionamentos
         public ICollection<Resposta_Questionario> Respostas_Questionario { get; set; }

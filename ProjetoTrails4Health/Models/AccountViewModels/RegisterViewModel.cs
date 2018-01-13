@@ -48,8 +48,9 @@ namespace ProjetoTrails4Health.Models.AccountViewModels
         public string DataNascimento { get; set; }
 
         [Required(ErrorMessage = "Introduza o Nif")]
-        public string NIF { get; set; }
         [Display(Name = "Contribuinte")]
-        public String TipoUtilizador { get; set; }
+        public string NIF { get; set; }
+       
+        
     }
 }

@@ -94,7 +94,7 @@ namespace ProjetoTrails4Health.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Professor,Turista")]
-        public async Task<IActionResult> Edit(int id, [Bind("TuristaId,Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
+        public async Task<IActionResult> Edit(int id, [Bind("Email, Password, ConfirmPassword, TuristaId, Nome, Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista)
         {
             if (id != turista.TuristaId)
             {
