@@ -221,22 +221,74 @@ namespace ProjetoTrails4Health.Controllers
             return View();
         }
 
+        
+
+        public bool IsValidContrib(string Contrib)
+        {
+            bool functionReturnValue = false;
+            functionReturnValue = false;
+            string[] s = new string[9];
+            string Ss = null;
+            string C = null;
+            int i = 0;
+            long checkDigit = 0;
+
+            s[0] = Convert.ToString(Contrib[0]);
+            s[1] = Convert.ToString(Contrib[1]);
+            s[2] = Convert.ToString(Contrib[2]);
+            s[3] = Convert.ToString(Contrib[3]);
+            s[4] = Convert.ToString(Contrib[4]);
+            s[5] = Convert.ToString(Contrib[5]);
+            s[6] = Convert.ToString(Contrib[6]);
+            s[7] = Convert.ToString(Contrib[7]);
+            s[8] = Convert.ToString(Contrib[8]);
+
+            if (Contrib.Length == 9)
+            {
+                C = s[0];
+                if (s[0] == "1" || s[0] == "2" || s[0] == "5" || s[0] == "6" || s[0] == "9")
+                {
+                    checkDigit = Convert.ToInt32(C) * 9;
+                    for (i = 2; i <= 8; i++)
+                    {
+                        checkDigit = checkDigit + (Convert.ToInt32(s[i - 1]) * (10 - i));
+                    }
+                    checkDigit = 11 - (checkDigit % 11);
+                    if ((checkDigit >= 10))
+                        checkDigit = 0;
+                    Ss = s[0] + s[1] + s[2] + s[3] + s[4] + s[5] + s[6] + s[7] + s[8];
+                    if ((checkDigit == Convert.ToInt32(s[8])))
+                        functionReturnValue = true;
+                }
+            }
+            return functionReturnValue;
+        }
+
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register([Bind("Email,TipoUtilizador")] Turista turista, RegisterViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Register([Bind("Email, Password, ConfirmPassword, TuristaId, Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista, RegisterViewModel model, string returnUrl = null)
         {
-
-
+            if (ModelState.IsValid)
+            {
+                if (IsValidContrib(turista.NIF) == false)
+                {
+                    ModelState.AddModelError("NIF", "O Nif está incorreto.");
+                    return View();
+                }
+                else
+                {
+                    _context.Add(turista);
+                    await _context.SaveChangesAsync();
+                }
+            }
+            
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-
-
-
-
+                var user = new ApplicationUser { UserName = model.Nome, Email = model.Email };
+                
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -246,23 +298,11 @@ namespace ProjetoTrails4Health.Controllers
                     //var callbackUrl = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                     //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
                     //    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
-
-                    if (turista.TipoUtilizador == "Turista")
-                    {
-                        await _userManager.AddToRoleAsync(user, "Turista");
-                    }
-                    else if (turista.TipoUtilizador == "Professor")
-                    {
-                        await _userManager.AddToRoleAsync(user, "Professor");
-                    }
-
-                    System.Diagnostics.Debug.WriteLine(turista.TipoUtilizador.ToString());
+               
                     
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
 
-                    _context.Add(turista);
-                    await _context.SaveChangesAsync();
 
                     return RedirectToLocal(returnUrl);
                 }
@@ -342,7 +382,7 @@ namespace ProjetoTrails4Health.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

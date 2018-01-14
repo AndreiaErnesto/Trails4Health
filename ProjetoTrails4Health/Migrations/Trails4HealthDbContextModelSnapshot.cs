@@ -187,6 +187,8 @@ namespace ProjetoTrails4Health.Migrations
 
                     b.Property<string>("CodPostal");
 
+                    b.Property<string>("ConfirmPassword");
+
                     b.Property<string>("DataNascimento")
                         .IsRequired();
 
@@ -200,6 +202,10 @@ namespace ProjetoTrails4Health.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<string>("Telemovel");
 
