@@ -396,6 +396,8 @@ namespace ProjetoTrails4Health.Controllers
                     }
                 }
                 AddErrors(result);
+
+               
             }
 
             ViewData["ReturnUrl"] = returnUrl;
