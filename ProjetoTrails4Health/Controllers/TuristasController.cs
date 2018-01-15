@@ -69,8 +69,6 @@ namespace ProjetoTrails4Health.Controllers
             return View();
         }
 
-      
-
         // GET: Turistas/Edit/5
         [Authorize(Roles = "Professor,Turista")]
         public async Task<IActionResult> Edit(int? id)

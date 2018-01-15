@@ -81,12 +81,12 @@ namespace ProjetoTrails4Health.Controllers
                 }
                 if (result.IsLockedOut)
                 {
-                    _logger.LogWarning("User account locked out.");
+                    _logger.LogWarning("Conta de utilizador bloqueada.");
                     return RedirectToAction(nameof(Lockout));
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Tentativa de login inválida.");
                     return View(model);
                 }
             }
@@ -270,6 +270,7 @@ namespace ProjetoTrails4Health.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register([Bind("Email, Password, ConfirmPassword, TuristaId, Nome,Morada,CodPostal,Email,Telemovel,DataNascimento,NIF")] Turista turista, RegisterViewModel model, string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
                 if (IsValidContrib(turista.NIF) == false)
@@ -281,34 +282,34 @@ namespace ProjetoTrails4Health.Controllers
                 {
                     _context.Add(turista);
                     await _context.SaveChangesAsync();
+                    var user = new ApplicationUser { UserName = model.Nome, Email = model.Email };
+
+                    var result = await _userManager.CreateAsync(user, model.Password);
+
+                    if (!await _userManager.IsInRoleAsync(user, "Turista"))
+                    {
+                        await _userManager.AddToRoleAsync(user, "Turista");
+                    }
+
+                    if (result.Succeeded)
+                    {
+                        // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
+                        // Send an email with this link
+                        //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                        //var callbackUrl = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                        //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
+                        //    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
+
+
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        _logger.LogInformation(3, "Utilizador criou uma nova conta com palavra passe.");
+
+
+                        return RedirectToLocal(returnUrl);
+                    }
+                    AddErrors(result);
                 }
             }
-            
-            ViewData["ReturnUrl"] = returnUrl;
-            if (ModelState.IsValid)
-            {
-                var user = new ApplicationUser { UserName = model.Nome, Email = model.Email };
-                
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
-                {
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
-                    // Send an email with this link
-                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    //var callbackUrl = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                    //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
-                    //    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
-               
-                    
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    _logger.LogInformation(3, "User created a new account with password.");
-
-
-                    return RedirectToLocal(returnUrl);
-                }
-                AddErrors(result);
-            }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }

@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using ProjetoTrails4Health.Data;
 using System;
 
-namespace ProjetoTrails4Health.Migrations.Trails4HealthLoginsDb
+namespace ProjetoTrails4Health.Migrations
 {
     [DbContext(typeof(Trails4HealthLoginsDbContext))]
-    [Migration("20180113124815_Initial")]
+    [Migration("20180115170404_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

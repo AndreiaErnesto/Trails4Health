@@ -48,7 +48,7 @@
 }
 
                     
-                <li>@if (User.IsInRole("Turista")|| User.IsInRole("Professor"))
+                <li>@if (User.IsInRole("Turista"))
                 {<a asp-area="" asp-controller="Agenda_Turista_Trilho" asp-action="Index">Agenda</a>}</li>
                      
                     <li><a asp-area="" asp-controller="Home" asp-action="Galeria">Galeria</a></li>
