@@ -13,82 +13,7 @@ Trilho selecionado: @Model.Trilho.Nome_Trilho
         <h4>Agendar Trilho</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @*<table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Nome_Trilho
-                    </th>
-                    <th>
-                     Local_Inicio_Trilho
-                    </th>
-                    <th>
-                       Local_Fim_Trilho
-                    </th>
-                    <th>
-                     Distancia_Total
-                    </th>
-                    <th>
-                        Duracao_Media
-                    </th>
-                    <th>
-                     Esta_Ativo
-                    </th>
-                    <th>
-                       Tempo_Gasto
-                    </th>
-                    <th>
-                        Dificuldade
-                    </th>
-                    <th>
-                       Professor
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in (IEnumerable<Trilho>)ViewData["Trilhos"])
-                {
-                    
-                        <tr>
-                          <td>
-                               @Html.DisplayFor(modelItem => item.Nome_Trilho)
-
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Local_Inicio_Trilho)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Local_Fim_Trilho)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Distancia_Total)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Duracao_Media)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Esta_Ativo)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Tempo_Gasto)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Dificuldade.DificuldadeId)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Professor.ProfessorId)
-                            </td>
-                            <a asp-action="Details" asp-route-id="">Selecionar</a> |
-
-                        </tr>
-                    
-                }
-            </tbody>
-        </table>*@
-
-       
-       
+      
         <!--<p class="gallery">
             <img src="~/images/banner22.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
             <p> Trilho 1</p>
@@ -138,7 +63,7 @@ Trilho selecionado: @Model.Trilho.Nome_Trilho
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Criar" class="btn btn-default" />
+                <input type="submit" value="Agendar" class="btn btn-default" />
             </div>
         </div>
     </div>

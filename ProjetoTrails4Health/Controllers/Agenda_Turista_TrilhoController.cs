@@ -75,7 +75,7 @@ namespace ProjetoTrails4Health.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Professor,Turista")]
-        public async Task<IActionResult> Create([Bind("TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
+        public async Task<IActionResult> Create([Bind("TrilhoId,Data_Prevista_Inicio_Trilho")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace ProjetoTrails4Health.Controllers
                 return RedirectToAction("Index");
             }
             ViewData["TrilhoId"] = new SelectList(_context.Set<Trilho>(), "TrilhoId", "TrilhoId", agenda_Turista_Trilho.TrilhoId);
-            ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "DataNascimento", agenda_Turista_Trilho.TuristaId);
+           // ViewData["TuristaId"] = new SelectList(_context.Set<Turista>(), "TuristaId", "DataNascimento", agenda_Turista_Trilho.TuristaId);
             return View(agenda_Turista_Trilho);
         }
 
@@ -180,6 +180,7 @@ namespace ProjetoTrails4Health.Controllers
 
         private bool Agenda_Turista_TrilhoExists(int id)
         {
+
             return _context.Agenda_Turista_Trilho.Any(e => e.Agenda_Turista_TrilhoId == id);
         }
     }
