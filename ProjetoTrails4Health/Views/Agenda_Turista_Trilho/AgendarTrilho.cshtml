@@ -8,7 +8,7 @@
 
 Trilho selecionado: @Model.Trilho.Nome_Trilho
 
-<form asp-action="Create">
+<form asp-action="AgendarTrilho">
     <div class="form-horizontal">
         <h4>Agendar Trilho</h4>
         <hr />
@@ -33,7 +33,7 @@ Trilho selecionado: @Model.Trilho.Nome_Trilho
             </div>
         </div>*@
       
-       
+        <input asp-for="TrilhoId" value="@Model.TrilhoId" />
         <div class="form-group">
             <label asp-for="Data_Prevista_Inicio_Trilho" class="col-md-2 control-label"></label>
             <div class="col-md-10">

@@ -75,11 +75,19 @@ namespace ProjetoTrails4Health.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Professor,Turista")]
-        public async Task<IActionResult> Create([Bind("TrilhoId,Data_Prevista_Inicio_Trilho")] Agenda_Turista_Trilho agenda_Turista_Trilho)
+        public async Task<IActionResult> AgendarTrilho([Bind("TrilhoId,Data_Prevista_Inicio_Trilho")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
             if (ModelState.IsValid)
             {
+                agenda_Turista_Trilho.Turista = await _context.Turista.SingleOrDefaultAsync(t => t.TuristaId == 1);
+     
+                if (agenda_Turista_Trilho.Turista == null)
+                {
+                    return NotFound();
+                }
+
                 _context.Add(agenda_Turista_Trilho);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
