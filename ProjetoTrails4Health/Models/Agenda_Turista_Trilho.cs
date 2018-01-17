@@ -9,7 +9,8 @@ namespace ProjetoTrails4Health.Models
 {
     public class Agenda_Turista_Trilho
     {
-       
+        internal Dificuldade Dificuldade;
+
         public int Agenda_Turista_TrilhoId { get; set; }
        // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Trilho Trilho { get; set; }
@@ -24,18 +25,20 @@ namespace ProjetoTrails4Health.Models
         [Required(ErrorMessage = "Por favor introduza uma data da reserva")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public DateTime Data_Reserva { get; set; } = DateTime.Now;
+        public DateTime Data_Reserva { get; set; } = System.DateTime.Now;
 
         [Required(ErrorMessage = "Por favor introduza uma data prevista da reserva")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        public DateTime Data_Prevista_Inicio_Trilho { get; set; } = DateTime.Now;
+        public DateTime Data_Prevista_Inicio_Trilho { get; set; }
 
         public string Estado_Agendamento { get; set; } = "?";
 
         [Required(ErrorMessage = "Por favor introduza o estado do Agendamento do Trilho")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-         public DateTime Data_Estado_Agendamento { get; set; } =  DateTime.Now;
+         public DateTime Data_Estado_Agendamento { get; set; } =  System.DateTime.Now;
+
+        
     }
 }

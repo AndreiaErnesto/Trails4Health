@@ -1,10 +1,12 @@
 @model ProjetoTrails4Health.Models.Agenda_Turista_Trilho
 
+
 @{
     ViewData["Title"] = "Criar";
 }
 
 <h2>Criar</h2>
+
 
 Trilho selecionado: @Model.Trilho.Nome_Trilho
 
@@ -32,7 +34,9 @@ Trilho selecionado: @Model.Trilho.Nome_Trilho
                 <select asp-for="TrilhoId" class ="form-control" asp-items="ViewBag.TrilhoId"></select>
             </div>
         </div>*@
-      
+        
+       
+
         <input asp-for="TrilhoId" value="@Model.TrilhoId" />
         <div class="form-group">
             <label asp-for="Data_Prevista_Inicio_Trilho" class="col-md-2 control-label"></label>
