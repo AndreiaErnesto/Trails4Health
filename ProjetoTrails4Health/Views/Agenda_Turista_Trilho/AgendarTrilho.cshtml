@@ -37,7 +37,7 @@ Trilho selecionado: @Model.Trilho.Nome_Trilho
         
        
 
-        <input asp-for="TrilhoId" value="@Model.TrilhoId" />
+        <input asp-for="TrilhoId" style="visibility" type="hidden" value="@Model.Trilho.TrilhoId" />
         <div class="form-group">
             <label asp-for="Data_Prevista_Inicio_Trilho" class="col-md-2 control-label"></label>
             <div class="col-md-10">

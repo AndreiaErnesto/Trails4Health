@@ -32,7 +32,7 @@ namespace ProjetoTrails4Health.Models
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime Data_Prevista_Inicio_Trilho { get; set; }
 
-        public string Estado_Agendamento { get; set; } = "?";
+        public string Estado_Agendamento { get; set; } = "Agendado";
 
         [Required(ErrorMessage = "Por favor introduza o estado do Agendamento do Trilho")]
         [DataType(DataType.Date)]
