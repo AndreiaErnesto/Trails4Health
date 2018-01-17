@@ -282,9 +282,9 @@ namespace ProjetoTrails4Health.Controllers
                 {
                     _context.Add(turista);
                     await _context.SaveChangesAsync();
-                    var user = new ApplicationUser { UserName = model.Nome, Email = model.Email };
+                    var user = new ApplicationUser { UserName = turista.Nome, Email = turista.Email };
 
-                    var result = await _userManager.CreateAsync(user, model.Password);
+                    var result = await _userManager.CreateAsync(user, turista.Password);
 
                     if (!await _userManager.IsInRoleAsync(user, "Turista"))
                     {
@@ -373,7 +373,7 @@ namespace ProjetoTrails4Health.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ExternalLoginConfirmation(ExternalLoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> ExternalLoginConfirmation(ExternalLoginViewModel model, Turista turista, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
@@ -383,7 +383,7 @@ namespace ProjetoTrails4Health.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
+                var user = new ApplicationUser { UserName = turista.Email, Email = turista.Email};
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

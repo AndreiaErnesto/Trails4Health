@@ -10,6 +10,8 @@ namespace ProjetoTrails4Health.Models.AccountViewModels
     {
         [Required]
         //[EmailAddress]
+
+        [Display(Name = "Nome")]
         public string Email { get; set; }
 
         [Required]

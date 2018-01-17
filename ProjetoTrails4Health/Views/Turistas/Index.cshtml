@@ -1,36 +1,27 @@
-﻿@model TuristaListViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@using ProjetoTrails4Health.Models
+@model IEnumerable<Turista> 
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
 
 @{
-    ViewData["Title"] = "Lista de Turistas";
+    ViewData["Title"] = "Turista";
 }
 
-<h2>Lista de Turistas</h2>
+<h2>Turista</h2>
 
-    <table class="table">
-        <thead>
+<table class="table">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @if (UserManager.GetUserName(User) == Html.DisplayNameFor(model => model.Nome)) { 
             <tr>
-                <th>Nome</th>
-                <th>Morada</th>
-                <th>Código Postal</th>
-                <th>Email</th>
-                <th>Telemovel</th>
-                <th>Data Nascimento</th>
-                <th>Nif</th>
+                <td><a asp-action="Edit" asp-route-id="@Html.DisplayNameFor(model => model.TuristaId)">Editar</a> </td>
             </tr>
-        </thead>
+            <tr>
+                <td><a asp-action="Details" asp-route-id="@Html.DisplayNameFor(model => model.TuristaId)">Detalhes</a> </td>
+            </tr>
+        }
+    }
+</table>
 
-        <tbody>
-            @foreach (Turista t in Model.Turistas){ 
-                @Html.Partial("TuristaSummary", new TuristaViewModel { Turista = t })
-             }
-        </tbody>
-    </table>
-
-    <div page-model="@Model.PagingInfo"
-         css-classes-enabled="true"
-         css-class-page="btn btn-sm"
-         css-class-page-normal="btn-default"
-         css-class-page-selected="btn-primary"
-         class="pull-right"
-         page-action="Index">
-    </div>
