@@ -33,6 +33,7 @@ namespace ProjetoTrails4Health.Models
         public string Telemovel { get; set; }
 
         [Required(ErrorMessage = "Introduza a data de nascimento")]
+        [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public string DataNascimento { get; set; }
