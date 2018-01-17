@@ -8,6 +8,8 @@ namespace ProjetoTrails4Health.Models
 {
     public class Turista{
         public int TuristaId { get; set; }
+
+        [StringLength(30, ErrorMessage = "O nome é demasiado comprido.", MinimumLength = 6)]
         [Required(ErrorMessage = "Introduza o nome")]
         public string Nome { get; set; }
 
@@ -22,6 +24,7 @@ namespace ProjetoTrails4Health.Models
         [Compare("Password", ErrorMessage = "A password e a sua confirmação não são iguais.")]
         public string ConfirmPassword { get; set; }
 
+        [Required]
         public string Morada { get; set; }
         
         //[Required(ErrorMessage = "Please enter the postal code")]
@@ -30,6 +33,7 @@ namespace ProjetoTrails4Health.Models
         public string CodPostal { get; set; }
 
         [Required(ErrorMessage = "Introduza o email")]
+        [EmailAddress(ErrorMessage = "Email inválido")]
         public string Email { get; set; }
         
         //Portuguese Phone Number
