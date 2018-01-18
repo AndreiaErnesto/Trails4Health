@@ -126,10 +126,10 @@ namespace ProjetoTrails4Health.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Turista")]
-        public async Task<IActionResult> Edit(int id, [Bind("Agenda_Turista_TrilhoId,TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
+        public async Task<IActionResult> Edit(int id, [Bind("TrilhoId,Tempo_Gasto,TuristaId,Data_Reserva,Data_Prevista_Inicio_Trilho,Estado_Agendamento,Data_Estado_Agendamento")] Agenda_Turista_Trilho agenda_Turista_Trilho)
         {
-            agenda_Turista_Trilho.Turista = await _context.Turista.SingleOrDefaultAsync(t => t.TuristaId == 1);
-            agenda_Turista_Trilho.Dificuldade = await _context.Dificuldade.SingleOrDefaultAsync(d => d.DificuldadeId == 1);
+            //agenda_Turista_Trilho.Turista = await _context.Turista.SingleOrDefaultAsync(t => t.TuristaId == 1);
+            //agenda_Turista_Trilho.Dificuldade = await _context.Dificuldade.SingleOrDefaultAsync(d => d.DificuldadeId == 1);
             if (id != agenda_Turista_Trilho.Agenda_Turista_TrilhoId)
             {
                 return NotFound();

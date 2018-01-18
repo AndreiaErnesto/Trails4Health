@@ -11,9 +11,10 @@ using System;
 namespace ProjetoTrails4Health.Migrations.Trails4HealthDb
 {
     [DbContext(typeof(Trails4HealthDbContext))]
-    partial class Trails4HealthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180118103330_AgendarTrilho")]
+    partial class AgendarTrilho
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

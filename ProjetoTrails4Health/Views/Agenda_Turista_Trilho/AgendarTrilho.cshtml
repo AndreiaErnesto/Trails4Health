@@ -16,26 +16,6 @@ Trilho selecionado: @Model.Trilho.Nome_Trilho
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
       
-        <!--<p class="gallery">
-            <img src="~/images/banner22.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
-            <p> Trilho 1</p>
-            <img src="~/images/banner33.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
-            <p> Trilho 2</p>
-            <img src="~/images/banner44.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
-            <p> Trilho 3</p>
-            <img src="~/images/banner11.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
-            <p> Trilho 4</p>
-             </div> 
-        -->
-        
-        @*<div class="form-group">
-            <label asp-for="Trilho" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <select asp-for="TrilhoId" class ="form-control" asp-items="ViewBag.TrilhoId"></select>
-            </div>
-        </div>*@
-        
-       
 
         <input asp-for="TrilhoId" style="visibility" type="hidden" value="@Model.Trilho.TrilhoId" />
         <div class="form-group">
@@ -45,6 +25,25 @@ Trilho selecionado: @Model.Trilho.Nome_Trilho
                 <span asp-validation-for="Data_Prevista_Inicio_Trilho" class="text-danger"></span>
             </div>
         </div>
+        <!--<p class="gallery">
+        <img src="~/images/banner22.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
+        <p> Trilho 1</p>
+        <img src="~/images/banner33.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
+        <p> Trilho 2</p>
+        <img src="~/images/banner44.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
+        <p> Trilho 3</p>
+        <img src="~/images/banner11.jpg" alt="Visual Studio" class="img-responsive" width="200" height="300" />
+        <p> Trilho 4</p>
+         </div>
+    -->
+        @*<div class="form-group">
+            <label asp-for="Trilho" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="TrilhoId" class ="form-control" asp-items="ViewBag.TrilhoId"></select>
+            </div>
+        </div>*@
+
+
        <!--<div class="form-group">
             <label asp-for="Estado_Agendamento" class="col-md-2 control-label"></label>
             <div class="col-md-10">

@@ -13,6 +13,9 @@
     <thead>
         <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.Trilho)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Data_Reserva)
                 </th>
                 <th>
@@ -21,11 +24,8 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Estado_Agendamento)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Data_Estado_Agendamento)
-                </th>
             <th>
-                @Html.DisplayNameFor(model => model.Trilho)
+                @Html.DisplayNameFor(model => model.Data_Estado_Agendamento)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Turista)
@@ -56,20 +56,12 @@
                 @Html.DisplayFor(modelItem => item.Turista.TuristaId)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Editar", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Detalhes", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Eliminar", new { /* id=item.PrimaryKey */ })
-
+                @Html.ActionLink("Editar", "Edit", new {  id=item.Agenda_Turista_TrilhoId }) |
+                @Html.ActionLink("Detalhes", "Details", new {  id=item.Agenda_Turista_TrilhoId  }) |
+                @Html.ActionLink("Eliminar", "Delete", new {  id=item.Agenda_Turista_TrilhoId  })
 
             </td>
-              
-           
-            <!-- <td>
-                <a asp-action="Edit" asp-route-id="@item.TuristaId">Alterar</a> |
-                <a asp-action="Details" asp-route-id="@item.TuristaId">Consultar</a> |
-                <a asp-action="Delete" asp-route-id="@item.TuristaId">Cancelar</a>
-            </td>-->
-           
+          
         </tr>
 }
     </tbody>
