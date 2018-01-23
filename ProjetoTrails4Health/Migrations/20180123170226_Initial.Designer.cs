@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using ProjetoTrails4Health.Data;
 using System;
 
-namespace ProjetoTrails4Health.Migrations.Trails4HealthDb
+namespace ProjetoTrails4Health.Migrations
 {
     [DbContext(typeof(Trails4HealthDbContext))]
-    [Migration("20180116005311_Agenda")]
-    partial class Agenda
+    [Migration("20180123170226_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -196,13 +196,15 @@ namespace ProjetoTrails4Health.Migrations.Trails4HealthDb
                     b.Property<string>("Email")
                         .IsRequired();
 
-                    b.Property<string>("Morada");
+                    b.Property<string>("Morada")
+                        .IsRequired();
 
                     b.Property<string>("NIF")
                         .IsRequired();
 
                     b.Property<string>("Nome")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.Property<string>("Password")
                         .IsRequired()

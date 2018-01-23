@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace ProjetoTrails4Health.Migrations.Trails4HealthDb
+namespace ProjetoTrails4Health.Migrations
 {
     public partial class Initial : Migration
     {
@@ -70,9 +70,9 @@ namespace ProjetoTrails4Health.Migrations.Trails4HealthDb
                     ConfirmPassword = table.Column<string>(nullable: true),
                     DataNascimento = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
-                    Morada = table.Column<string>(nullable: true),
+                    Morada = table.Column<string>(nullable: false),
                     NIF = table.Column<string>(nullable: false),
-                    Nome = table.Column<string>(nullable: false),
+                    Nome = table.Column<string>(maxLength: 30, nullable: false),
                     Password = table.Column<string>(maxLength: 100, nullable: false),
                     Telemovel = table.Column<string>(nullable: true)
                 },
